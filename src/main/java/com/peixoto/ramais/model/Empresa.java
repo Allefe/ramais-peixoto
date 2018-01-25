@@ -18,11 +18,10 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = "empresa")
 public class Empresa implements Serializable {
 	
-	private static final long serialVersionUID = 787878L;
-	
+	private static final long serialVersionUID = -6075979616115740003L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@OneToMany(targetEntity=Pessoa.class, mappedBy= "empresa")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "idemp")
 	private Integer idEmpresa;
 	
@@ -51,7 +50,7 @@ public class Empresa implements Serializable {
 	@Column(name = "siteemp")
 	private String siteEmpresa;
 	
-	@OneToMany(targetEntity = Telefone.class, mappedBy="Empresa")
+	@OneToMany(targetEntity = Telefone.class, mappedBy="empresa")
 	private List <Telefone> telefone;
 	
 	

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.peixoto.ramais.model.Empresa;
 
 @Repository
-public interface EmpresaRepository extends JpaRepository<Empresa, String> {
+public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
 
 }

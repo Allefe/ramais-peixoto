@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -17,11 +16,10 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = "setor")
 public class Setor implements Serializable{
 
-	private static final long serialVersionUID = 787878L;
-	
+	private static final long serialVersionUID = -4058947309651796481L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@OneToMany(targetEntity=Pessoa.class, mappedBy= "setor")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "idset")
 	private Integer idSetor;
 	

@@ -19,12 +19,12 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "pessoa")
 public class Pessoa implements Serializable {
-	
 
-	private static final long serialVersionUID = 787878L;
+	private static final long serialVersionUID = -6973656741764851079L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idpes")
 	private Integer idPessoa;
 	
 	@Column(name = "nomepes")
@@ -63,17 +63,17 @@ public class Pessoa implements Serializable {
 	@NotNull(message = "Função não informada!")
 	private Funcao funcao;
 	
-	@ManyToOne(targetEntity = Funcao.class)
+	@ManyToOne(targetEntity = Setor.class)
 	@JoinColumn(name = "idSetor", referencedColumnName = "idset", foreignKey = @ForeignKey(name = "fk_setorPessoa"))
-	@NotNull(message = "Setor não informada!")
+	@NotNull(message = "Setor não informado!")
 	private Setor setor;
 	
-	@ManyToOne(targetEntity = Funcao.class)
-	@JoinColumn(name = "idEmpresa", referencedColumnName = "idemp", foreignKey = @ForeignKey(name = "fk_empresaPessoa"))
+	@ManyToOne(targetEntity = Empresa.class)
+	@JoinColumn(name = "idemp", referencedColumnName = "idemp", foreignKey = @ForeignKey(name = "fk_empresaPessoa"))
 	@NotNull(message = "Empresa não informada!")
 	private Empresa empresa;
 	
-	@ManyToOne(targetEntity = Funcao.class)
+	@ManyToOne(targetEntity = Filial.class)
 	@JoinColumn(name = "idFilial", referencedColumnName = "idfilial", foreignKey = @ForeignKey(name = "fk_filialPessoa"))
 	@NotNull(message = "Filial não informada!")
 	private Filial filial;
