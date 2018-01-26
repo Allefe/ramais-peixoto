@@ -50,6 +50,9 @@ public class Empresa implements Serializable {
 	@Column(name = "siteemp")
 	private String siteEmpresa;
 	
+	@Column(name = "ramoemp")
+	private String ramoAtivEmpresa;
+	
 	@OneToMany(targetEntity = Telefone.class, mappedBy="empresa")
 	private List <Telefone> telefone;
 	
@@ -107,6 +110,12 @@ public class Empresa implements Serializable {
 	}
 	public void setSiteEmpresa(String siteEmpresa) {
 		this.siteEmpresa = siteEmpresa;
+	}
+	public String getRamoAtivEmpresa() {
+		return ramoAtivEmpresa;
+	}
+	public void setRamoAtivEmpresa(String ramoAtivEmpresa) {
+		this.ramoAtivEmpresa = ramoAtivEmpresa;
 	}
 	public List<Telefone> getTelefones() {
 		return telefone;

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>Lista Contatos PXT</title>
+	
+	
+<style>
+	
+body {
+	
+  min-height: 2000px;
+  padding-top: 70px;
+  
+  background-image: url("../../images/bg_body.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  
+}
+
+#middle_content{
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: white;
+	border-radius: 8px;
+}
+#busca{
+	height: 34px;
+}
+
+#lista {
+    float: left;
+    text-align: center;
+    padding: 4px;
+    display: block;
+    
+}
+
+#lista a{
+text-decoration: none;
+}
+
+	
+	</style>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+</head>
+	
+	<body style="background-color:#f2f2f2">
+	
+	<!-- Navbar Fixa -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"> <i class="fa fa-address-book" style="font-size:20px"></i> Contatos PXT</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#home">Ramais</a></li>
+					<li><a data-toggle="tab" href="#menu1">Corporativos</a></li>
+					<li><a data-toggle="tab" href="#menu2">Filiais</a></li>
+					<li><a data-toggle="tab" href="#menu3">Gerentes de Vendas</a></li>
+					<li><a data-toggle="tab" href="#menu4">Terceiros</a></li>
+					
+				</ul>
+            </ul>
+			 <form class="navbar-form navbar-left" action="#">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Buscar" name="busca">
+						<div class="input-group-btn">
+							<button id="busca" class="btn btn-default" type="submit">
+								<i class="glyphicon glyphicon-search" style="font-size:14px"></i>
+							</button>
+						</div>
+				</div>
+			</form>
+			
+			
+            <ul class="nav navbar-nav navbar-right">
+				
+				<!-- <button type="button" class="btn btn-info navbar-btn btn-md"><i class="glyphicon glyphicon-user pull-left" style="font-size:16px"></i> Login</button> -->
+				<button class="btn btn-info navbar-btn" style="font-size:16px"><i class="fa fa-user"></i> Login</button>
+            </ul>
+        </div>
+		<!--/.nav-collapse -->
+		
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <!-- Componente Main -->
+      <div id="middle_content" class="col-sm-12">
+		
+		<ul id="lista_setores">
+			  <li id="lista"><a href="#">T.I</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">Controladoria</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">R.H</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">Diretoria</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">Disk Center</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">Logistica</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">Financeiro</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">Comercial</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">M&A</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">Juridico</a></li>
+			  <li id="lista">|</li>
+			  <li id="lista"><a href="#">Portaria</a></li>
+			  <!-- DeverÃ¡ abrir um modal com formulario para fazer a solicitaÃ§Ã£o -->
+			  <li id="lista" style="float: right"><button class="btn btn-success navbar-btn btn-sm" style="float: right"><i class="fa fa-plus-square" style="font-size:16px"></i> Solicitar Cadastro</button></li>
+		</ul>
+		<br>
+		<br>
+		<br>
+		
+		<div class="table-responsive">
+			  <table class="table table-striped">
+				
+				<thead>
+					<tr>
+					  <th scope="col">Nome</th>
+					  <th scope="col">Cargo</th>
+					  <th scope="col"><i class="fa fa-phone-square" style="font-size:17px"></i> Ramal</th>
+					  <th scope="col"><span class="glyphicon glyphicon-envelope"></span> E-mail</th>
+					  <th>Edit</th>
+					  <th>Delete</th>
+					</tr>
+				</thead>
+			  <tbody>
+					<tr>
+					  <td>Allefe Jose Soares Siqueira</td>
+					  <td>Operador de Data Center</td>
+					  <td>5532</td>
+					  <td>allefejss@peixoto.com.br</td>
+					  <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+					  <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+					</tr>
+					
+					<tr>
+					  <td>Allefe Jose Soares Siqueira</td>
+					  <td>Operador de Data Center</td>
+					  <td>5532</td>
+					  <td>allefejss@peixoto.com.br</td>
+					  <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+					  <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+					</tr>
+			   </tbody>
+				
+			  </table>
+		</div>
+        
+        
+      </div>
+
+    </div> <!-- fecha /container -->
+	
+	</body>
+</html>
