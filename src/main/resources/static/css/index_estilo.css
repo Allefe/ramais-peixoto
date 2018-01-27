@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+body {
+	
+  min-height: 2000px;
+  padding-top: 70px;
+  
+  background-image: url("../../images/bg_body.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  
+}
+
+#middle_content{
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: white;
+	border-radius: 8px;
+}
+#busca{
+	height: 34px;
+}
+
+#lista {
+    float: left;
+    text-align: center;
+    padding: 4px;
+    display: block;
+    
+}
+
+#lista a{
+text-decoration: none;
+}
