@@ -2,14 +2,15 @@
 
 body {
 	
-  min-height: 2000px;
+  
   padding-top: 70px;
+  
   
   background-image: url("../../images/bg_body.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center top;
-  
+  background-size: cover;
 }
 
 #middle_content{

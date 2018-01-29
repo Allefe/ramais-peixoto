@@ -12,7 +12,7 @@ public class HomeController {
 	
 	@GetMapping
 	public ModelAndView inicio(){
-		ModelAndView mv = new ModelAndView("pages/index");
+		ModelAndView mv = new ModelAndView("pages/listaramais/index");
 		return mv;
 	}
 	
