@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value= {"/contatospxt","/"})
-public class HomeController {
-	
+@RequestMapping("/gerentesdevendas")
+public class GerentesController {
 	
 	@GetMapping
-	public ModelAndView inicio(){
-		ModelAndView mv = new ModelAndView("pages/listaramais/index");
+	public ModelAndView inicio() {
+		ModelAndView mv = new ModelAndView("/pages/listaramais/gerentesdevendas");
+				
 		return mv;
+		
 	}
-	
-	
 }
