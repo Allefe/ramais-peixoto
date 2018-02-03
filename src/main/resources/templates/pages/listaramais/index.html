@@ -6,163 +6,977 @@
 
 </head>
 <body>
-  <section layout:fragment="conteudo">
+	<section layout:fragment="conteudo">
 
-    <div class="container">
+		<div class="container">
 
-      <!-- Componente Main -->
-      <div id="middle_content" class="col-sm-12">
-		
-		<ul id="lista_setores">
-			  <li id="lista"><a href="#">T.I</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">Controladoria</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">R.H</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">Diretoria</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">Disk Center</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">Logistica</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">Financeiro</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">Comercial</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">M&A</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">Juridico</a></li>
-			  <li id="lista">|</li>
-			  <li id="lista"><a href="#">Portaria</a></li>
-			  <!-- Deverá abrir um modal com formulario para fazer a solicitação -->
-			  <li id="lista" style="float: right"><button class="btn btn-success navbar-btn btn-sm" data-toggle="modal" data-target="#ModalCadastroNovo" style="float: right"><i class="fa fa-plus-square" style="font-size:16px"></i> Solicitar Cadastro</button></li>
-		</ul>
-		<br>
-		<br>
-		<br>
-		
-		<div class="table-responsive">
-			  <table class="table table-striped">
+			<div class="tab-content">
+
+				<div id="home" class="tab-pane fade in active">
+					<!-- Componente Main -->
+					<div id="middle_content" class="col-sm-12">
+
+						<ul id="lista_setores">
+							<li id="lista"><a href="#">T.I</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">Controladoria</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">R.H</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">Diretoria</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">Disk Center</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">Logistica</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">Financeiro</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">Comercial</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">M&A</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">Juridico</a></li>
+							<li id="lista">|</li>
+							<li id="lista"><a href="#">Portaria</a></li>
+							<!-- Deverá abrir um modal com formulario para fazer a solicitação -->
+							<li id="lista" style="float: right"><button
+									class="btn btn-success navbar-btn btn-sm" data-toggle="modal"
+									data-target="#ModalCadastroNovo" style="float: right">
+									<i class="fa fa-plus-square" style="font-size: 16px"></i>
+									Solicitar Cadastro
+								</button></li>
+						</ul>
+						<br> <br> <br>
+
+						<div class="table-responsive">
+							<table class="table table-striped">
+
+								<thead>
+									<tr>
+										<th scope="col">Nome</th>
+										<th scope="col">Cargo</th>
+										<th scope="col"><i class="fa fa-phone-square"
+											style="font-size: 17px"></i> Ramal</th>
+										<th scope="col"><span
+											class="glyphicon glyphicon-envelope"></span> E-mail</th>
+										<th scope="col">Edit</th>
+										<th scope="col">Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Allefe Jose Soares Siqueira</td>
+										<td>Operador de Data Center</td>
+										<td>5532</td>
+										<td>allefejss@peixoto.com.br</td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+
+									<tr>
+										<td>Allefe Jose Soares Siqueira</td>
+										<td>Operador de Data Center</td>
+										<td>5532</td>
+										<td>allefejss@peixoto.com.br</td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+
+						<!-- Modal Solicitar Cadastro Novo-->
+						<div class="modal fade" id="ModalCadastroNovo" role="dialog">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">
+											<i class="fa fa-plus-square" style="font-size: 16px"></i>
+											Solicitar Novo Cadastro
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<form>
+												<label>Nome: </label> <input class="form-control"
+													placeholder="Nome...">
+											</form>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Fecha container do primeiro modal -->
+
+
+						<!-- Ínicio Modal de Edição -->
+
+						<div class="modal fade" id="edit" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Solicitar
+											edição deste Registro</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<input class="form-control " type="text" placeholder="Mohsin">
+										</div>
+										<div class="form-group">
+
+											<input class="form-control " type="text" placeholder="Irshad">
+										</div>
+										<div class="form-group">
+											<textarea rows="2" class="form-control"
+												placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+										</div>
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-default btn-lg"
+											style="width: 100%;">
+											<span class="glyphicon glyphicon-refresh"></span> Solicitar
+											Atualização
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Edição -->
+
+
+						<!-- Ínicio Modal de exclusão -->
+						<div class="modal fade" id="delete" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Excluir
+											este Registro?</h4>
+									</div>
+									<div class="modal-body">
+
+										<div class="alert alert-danger">
+											<span class="glyphicon glyphicon-warning-sign"></span> Tem
+											certeza que deseja solicitar a exclusão deste registro?
+										</div>
+
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-success">
+											<span class="glyphicon glyphicon-ok-sign"></span> Sim
+										</button>
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">
+											<span class="glyphicon glyphicon-remove"></span> Não
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Exclusão -->
+					</div>
+
+				</div>
+				<!-- Fecha 1ª Tab Home -->
+
+
+				<!-- Inicio de um novo tab - Coporativos -->
+
+				<div id="corporativos" class="tab-pane fade">
+
+					<!-- Componente Main -->
+					<div id="middle_content" class="col-sm-12">
+						<div class="table-responsive">
+							<table class="table table-striped">
+
+								<thead>
+									<tr>
+										<th scope="col">Nome</th>
+										<th scope="col"><i class="fa fa-phone-square"
+											style="font-size: 17px"></i> Nº corporativo</th>
+										<th scope="col"><span
+											class="glyphicon glyphicon-envelope"></span> E-mail</th>
+										<th scope="col">Edit</th>
+										<th scope="col">Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Allefe Jose Soares Siqueira</td>
+										<td>3499999999</td>
+										<td>allefejss@peixoto.com.br</td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#editCorporativo">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#deleteCorporativo">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+
+									<tr>
+										<td>Allefe Jose Soares Siqueira</td>
+										<td>3499999999</td>
+										<td>allefejss@peixoto.com.br</td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#editCorporativo">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#deleteCorporativo">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+
+						<!-- Modal Solicitar Cadastro Novo-->
+						<div class="modal fade" id="ModalCadastroNovoCorporativo" role="dialog">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">
+											<i class="fa fa-plus-square" style="font-size: 16px"></i>
+											Solicitar Novo Cadastro
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<form>
+												<label>Nome: </label> <input class="form-control"
+													placeholder="Nome...">
+											</form>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Fecha container do primeiro modal -->
+
+
+						<!-- Ínicio Modal de Edição -->
+
+						<div class="modal fade" id="editCorporativo" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Solicitar
+											edição deste Registro</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<input class="form-control " type="text" placeholder="Mohsin">
+										</div>
+										<div class="form-group">
+
+											<input class="form-control " type="text" placeholder="Irshad">
+										</div>
+										<div class="form-group">
+											<textarea rows="2" class="form-control"
+												placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+										</div>
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-default btn-lg"
+											style="width: 100%;">
+											<span class="glyphicon glyphicon-refresh"></span> Solicitar
+											Atualização
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Edição -->
+
+
+						<!-- Ínicio Modal de exclusão -->
+						<div class="modal fade" id="deleteCorporativo" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Excluir
+											este Registro?</h4>
+									</div>
+									<div class="modal-body">
+
+										<div class="alert alert-danger">
+											<span class="glyphicon glyphicon-warning-sign"></span> Tem
+											certeza que deseja solicitar a exclusão deste registro?
+										</div>
+
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-success">
+											<span class="glyphicon glyphicon-ok-sign"></span> Sim
+										</button>
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">
+											<span class="glyphicon glyphicon-remove"></span> Não
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Exclusão -->
+
+					</div>
+
+
+				</div>
+				<!-- Fecha 2ª Tab Corporativos -->
 				
-				<thead>
-					<tr>
-					  <th scope="col">Nome</th>
-					  <th scope="col">Cargo</th>
-					  <th scope="col"><i class="fa fa-phone-square" style="font-size:17px"></i> Ramal</th>
-					  <th scope="col"><span class="glyphicon glyphicon-envelope"></span> E-mail</th>
-					  <th scope="col">Edit</th>
-					  <th scope="col">Delete</th>
-					</tr>
-				</thead>
-			  <tbody>
-					<tr>
-					  <td>Allefe Jose Soares Siqueira</td>
-					  <td>Operador de Data Center</td>
-					  <td>5532</td>
-					  <td>allefejss@peixoto.com.br</td>
-					  <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-					  <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-					</tr>
-					
-					<tr>
-					  <td>Allefe Jose Soares Siqueira</td>
-					  <td>Operador de Data Center</td>
-					  <td>5532</td>
-					  <td>allefejss@peixoto.com.br</td>
-					  <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-					  <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-					</tr>
-			   </tbody>
+			
+				<!-- Inicio de um novo tab - Filiais -->
+
+				<div id="filiais" class="tab-pane fade">
+
+					<!-- Componente Main -->
+					<div id="middle_content" class="col-sm-12">
+						<div class="table-responsive">
+							<table class="table table-striped">
+
+								<thead>
+									<tr>
+										<th scope="col">Nome</th>
+										<th scope="col"><i class="fa fa-phone-square"
+											style="font-size: 17px"></i> Nº corporativo</th>
+										<th scope="col"><span
+											class="glyphicon glyphicon-envelope"></span> E-mail</th>
+										<th scope="col">Edit</th>
+										<th scope="col">Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Allefe Jose Soares Siqueira</td>
+										<td>3499999999</td>
+										<td>allefejss@peixoto.com.br</td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#editfiliais">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#deletefiliais">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+
+									<tr>
+										<td>Allefe Jose Soares Siqueira</td>
+										<td>3499999999</td>
+										<td>allefejss@peixoto.com.br</td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#editfiliais">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#deletefiliais">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+
+						<!-- Modal Solicitar Cadastro Novo-->
+						<div class="modal fade" id="ModalCadastroNovoCorporativo" role="dialog">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">
+											<i class="fa fa-plus-square" style="font-size: 16px"></i>
+											Solicitar Novo Cadastro
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<form>
+												<label>Nome: </label> <input class="form-control"
+													placeholder="Nome...">
+											</form>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Fecha container do primeiro modal -->
+
+
+						<!-- Ínicio Modal de Edição -->
+
+						<div class="modal fade" id="editfiliais" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Solicitar
+											edição deste Registro</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<input class="form-control " type="text" placeholder="Mohsin">
+										</div>
+										<div class="form-group">
+
+											<input class="form-control " type="text" placeholder="Irshad">
+										</div>
+										<div class="form-group">
+											<textarea rows="2" class="form-control"
+												placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+										</div>
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-default btn-lg"
+											style="width: 100%;">
+											<span class="glyphicon glyphicon-refresh"></span> Solicitar
+											Atualização
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Edição -->
+
+
+						<!-- Ínicio Modal de exclusão -->
+						<div class="modal fade" id="deletefiliais" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Excluir
+											este Registro?</h4>
+									</div>
+									<div class="modal-body">
+
+										<div class="alert alert-danger">
+											<span class="glyphicon glyphicon-warning-sign"></span> Tem
+											certeza que deseja solicitar a exclusão deste registro?
+										</div>
+
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-success">
+											<span class="glyphicon glyphicon-ok-sign"></span> Sim
+										</button>
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">
+											<span class="glyphicon glyphicon-remove"></span> Não
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Exclusão -->
+
+					</div>
+					<!-- Fim middle_content -->
+
+				</div>
+				<!-- Fecha 3ª Tab Filiais -->
 				
-			  </table>
-		</div>
-        
-        <!-- Modal Solicitar Cadastro Novo-->
-		  <div class="modal fade" id="ModalCadastroNovo" role="dialog">
-			<div class="modal-dialog modal-lg">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <button type="button" class="close" data-dismiss="modal">&times;</button>
-				  <h4 class="modal-title"><i class="fa fa-plus-square" style="font-size:16px"></i> Solicitar Novo Cadastro</h4>
+				
+				
+				<!-- Inicio de um novo tab - Equipe de Vendas -->
+
+				<div id="gerentesvendas" class="tab-pane fade">
+
+					<!-- Componente Main -->
+					<div id="middle_content" class="col-sm-12">
+						<div class="table-responsive">
+							<table class="table table-striped">
+
+								<thead>
+									<tr>
+										<th scope="col">Div</th>
+										<th scope="col">Cargo</th>
+										<th scope="col">Nome</th>
+										<th scope="col">Código RCA</th>
+										<th scope="col">Cidade</th>
+										<th scope="col">Estado</th>
+										<th scope="col"><i class="fa fa-phone-square"
+											style="font-size: 17px"></i> Corporativo</th>
+										<th scope="col"><span
+											class="glyphicon glyphicon-envelope"></span> E-mail</th>
+										<th scope="col">CD</th>
+										<th scope="col">Edit</th>
+										<th scope="col">Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>3</td>
+										<td>Gerente Vendas</td>
+										<td>Allefe Jose Soares Siqueira</td>
+										<td>12647</td>
+										<td>Uberlandia</td>
+										<td>MG</td>
+										<td>3499999999</td>
+										<td>allefejss@peixoto.com.br</td>
+										<td>Praça</td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#editgerentesvendas">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#deletegerentesvendas">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+
+						<!-- Modal Solicitar Cadastro Novo-->
+						<div class="modal fade" id="ModalCadastroNovoCorporativo" role="dialog">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">
+											<i class="fa fa-plus-square" style="font-size: 16px"></i>
+											Solicitar Novo Cadastro
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<form>
+												<label>Nome: </label> <input class="form-control"
+													placeholder="Nome...">
+											</form>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Fecha container do primeiro modal -->
+
+
+						<!-- Ínicio Modal de Edição -->
+
+						<div class="modal fade" id="editgerentesvendas" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Solicitar
+											edição deste Registro</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<input class="form-control " type="text" placeholder="Mohsin">
+										</div>
+										<div class="form-group">
+
+											<input class="form-control " type="text" placeholder="Irshad">
+										</div>
+										<div class="form-group">
+											<textarea rows="2" class="form-control"
+												placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+										</div>
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-default btn-lg"
+											style="width: 100%;">
+											<span class="glyphicon glyphicon-refresh"></span> Solicitar
+											Atualização
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Edição -->
+
+
+						<!-- Ínicio Modal de exclusão -->
+						<div class="modal fade" id="deletegerentesvendas" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Excluir
+											este Registro?</h4>
+									</div>
+									<div class="modal-body">
+
+										<div class="alert alert-danger">
+											<span class="glyphicon glyphicon-warning-sign"></span> Tem
+											certeza que deseja solicitar a exclusão deste registro?
+										</div>
+
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-success">
+											<span class="glyphicon glyphicon-ok-sign"></span> Sim
+										</button>
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">
+											<span class="glyphicon glyphicon-remove"></span> Não
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Exclusão -->
+
+					</div>
+					<!-- Fim middle_content -->
+
 				</div>
-				<div class="modal-body">
-				  <div class="form-group">
-				  	<form>
-                    	<label>Nome: </label>
-                      	<input class="form-control" placeholder="Nome...">
-                    </form>
-                  </div>
+				<!-- Fecha 4ª Tab Gerentes Vendas -->				
+				
+				<!-- Inicio de um novo tab - Equipe de Terceiros -->
+
+				<div id="terceiros" class="tab-pane fade">
+
+					<!-- Componente Main -->
+					<div id="middle_content" class="col-sm-12">
+						<div class="table-responsive">
+							<table class="table table-hover">
+
+								<thead>
+									<tr>
+										<th scope="col">Nome</th>
+										<th scope="col">Ramo Atividade</th>
+										<th scope="col">Site</th>
+										<th scope="col">Edit</th>
+										<th scope="col">Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td onclick="myFunction(this)">Peixoto Atacadista</td>
+										<td onclick="myFunction(this)">Atacado e Distruibuidor</td>
+										<td onclick="myFunction(this)">www.peixoto.com.br</td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#editgerentesvendas">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#deleteterceiros">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+
+						<!-- Modal Item View -->
+						<div class="modal fade item_view" id="item_view">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h3>
+												<i class="material-icons" style="font-size:36px">business</i>
+												Dados da Empresa
+											</h3>
+									</div>
+									<div class="modal-body">
+										<div class="row">
+							                    <div class="col-md-6 item_img">
+							                        <img src="../../images/Logo_peixoto.png" class="img-responsive">
+							                    </div>
+							                    <div class="col-md-6 item_content">
+							                        <h3>
+							                            <span>Peixoto Atacado</span>
+							                            <!--span class="input-group-btn">
+							                                <button class="btn btn-danger btn-xs pull-right"; data-dismiss="modal" data-toggle="modal" data-target="#item_remove"><i class="glyphicon glyphicon-remove" ></i></button>
+							                                <button class="btn btn-warning btn-xs pull-right"; data-dismiss="modal" data-toggle="modal" data-target= "#item_edit"><i class="glyphicon glyphicon-edit" ></i></button>
+							                            </span-->
+							                        </h3>
+							                        <h5>Endereço Empresa</h5>
+							                        <p>Av. José Andraus Gassani. nº 900</p>
+							                        <p>Ramal: 5518</p>
+							                        <p>Estado: Minas Gerais - MG</p>
+							                        <p>Cidade: Uberlandia</p>
+							                        <p>Bairro: Industrial</p>
+							                    </div>
+							                    <h3>
+							                    <i class="fa fa-map-marker" style="font-size:24px"></i>
+							                    Localização: 
+							                    </h3>
+							                    <div class="col-md-12 item_content">
+							                    	
+							                    
+							                    </div>
+							            </div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Fecha container do primeiro modal -->
+
+
+						<!-- Ínicio Modal de Edição -->
+
+						<div class="modal fade" id="editterceiros" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Solicitar
+											edição deste Registro</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<input class="form-control " type="text" placeholder="Mohsin">
+										</div>
+										<div class="form-group">
+
+											<input class="form-control " type="text" placeholder="Irshad">
+										</div>
+										<div class="form-group">
+											<textarea rows="2" class="form-control"
+												placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+										</div>
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-default btn-lg"
+											style="width: 100%;">
+											<span class="glyphicon glyphicon-refresh"></span> Solicitar
+											Atualização
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Edição -->
+
+
+						<!-- Ínicio Modal de exclusão -->
+						<div class="modal fade" id="deleteterceiros" tabindex="-1" role="dialog"
+							aria-labelledby="edit" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+										<h4 class="modal-title custom_align" id="Heading">Excluir
+											este Registro?</h4>
+									</div>
+									<div class="modal-body">
+
+										<div class="alert alert-danger">
+											<span class="glyphicon glyphicon-warning-sign"></span> Tem
+											certeza que deseja solicitar a exclusão deste registro?
+										</div>
+
+									</div>
+									<div class="modal-footer ">
+										<button type="button" class="btn btn-success">
+											<span class="glyphicon glyphicon-ok-sign"></span> Sim
+										</button>
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">
+											<span class="glyphicon glyphicon-remove"></span> Não
+										</button>
+									</div>
+								</div>
+								<!-- /.Fim modal-content -->
+
+							</div>
+							<!-- /.Fim modal-dialog -->
+
+						</div>
+						<!-- Fim modal Exclusão -->
+
+					</div>
+					<!-- Fim middle_content -->
+
 				</div>
-				<div class="modal-footer">
-				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			  </div>
+				<!-- Fecha 4ª Tab Gerentes Vendas -->
+				
+				
+			<script type="text/javascript">
+           
+			function myFunction(x) {
+			    $("#item_view").modal();
+			};
+
+			</script>
+				
+				
+				
+
 			</div>
-		  </div> <!-- Fecha container do primeiro modal -->
-        
-        
-        <!-- Ínicio Modal de Edição -->
-        
-        <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-      		<div class="modal-dialog">
-    			<div class="modal-content">
-          			<div class="modal-header">
-        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        				<h4 class="modal-title custom_align" id="Heading">Solicitar edição deste Registro</h4>
-      				</div>
-          			<div class="modal-body">
-          				<div class="form-group">
-        					<input class="form-control " type="text" placeholder="Mohsin">
-        				</div>
-        					<div class="form-group">
-        
-        						<input class="form-control " type="text" placeholder="Irshad">
-        					</div>
-        					<div class="form-group">
-        						<textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
-    
-        
-        					</div>
-      				</div>
-			          	<div class="modal-footer ">
-			        		<button type="button" class="btn btn-default btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-refresh"></span> Solicitar Atualização</button>
-			      		</div>
-        		</div>
-    			<!-- /.Fim modal-content --> 
-  			</div><!-- /.Fim modal-dialog --> 
-      			
-    	</div>
-        <!-- Fim modal Edição -->
-        
-        
-        <!-- Ínicio Modal de exclusão -->
-        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-      		<div class="modal-dialog">
-    			<div class="modal-content">
-          			<div class="modal-header">
-        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        				<h4 class="modal-title custom_align" id="Heading">Excluir este Registro?</h4>
-      				</div>
-          			<div class="modal-body">
-       
-       					<div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Tem certeza que deseja solicitar a exclusão deste registro?</div>
-       
-      				</div>
-        			<div class="modal-footer ">
-        				<button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Sim</button>
-        				<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Não</button>
-      				</div>
-        		</div><!-- /.Fim modal-content --> 
-    			
-        	</div><!-- /.Fim modal-dialog --> 
-      		
-    	</div>
-        
-      </div>
+			<!-- Fecha tab Content -->
 
-    </div> <!-- fecha /container -->
-	<!-- Fim modal Exclusão -->
-</section>
-	</body>
+		</div>
+		<!-- fecha /container -->
+		
+	</section>
+</body>
 </html>
