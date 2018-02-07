@@ -57,6 +57,9 @@ public class Pessoa implements Serializable {
 	@Column(name = "cdprxpes")
 	private String cdProxPessoa;
 	
+	@Column(name = "departamentopes")
+	private String departamento;
+	
 	
 	@ManyToOne(targetEntity = Funcao.class)
 	@JoinColumn(name = "idFunc", referencedColumnName = "idfunc", foreignKey = @ForeignKey(name = "fk_funcaoPessoa"))
@@ -139,6 +142,12 @@ public class Pessoa implements Serializable {
 	}
 	public void setCdProxPessoa(String cdProxPessoa) {
 		this.cdProxPessoa = cdProxPessoa;
+	}
+	public String getDepartamento() {
+		return departamento;
+	}
+	public void setDepartamento(String departamento) {
+		this.departamento = departamento;
 	}
 	public Funcao getFuncao() {
 		return funcao;
