@@ -66,12 +66,12 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:if="${pessoa.departamentopes == 'T.I'" th:each="pessoa : ${pessoas}">
+									<tr th:if="${pessoa.departamento == 'T.I'}" th:each="pessoa : ${pessoas}">
 										<td colspan="6">Teconlogia da Informação<td>
-										<td th:text="${pessoa.nomepes}"></td>
-										<td th:text="${pessoa.cargopes}"></td>
-										<td th:text="${pessoa.ramalpes}"></td>
-										<td th:text="${pessoa.emailpes}"></td>
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.idFuncao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
 										
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Edit">

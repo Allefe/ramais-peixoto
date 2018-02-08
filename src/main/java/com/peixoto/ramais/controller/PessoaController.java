@@ -6,6 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.peixoto.ramais.model.Pessoa;
 import com.peixoto.ramais.repository.PessoaRepository;
 
@@ -27,10 +30,19 @@ public class PessoaController {
 		return "redirect:/";
 	}
 
-	@GetMapping(path = "/listar/pessoas")
+	/*
+	@GetMapping(path = "/contatospxt")
 	public String listarPessoa(Model model) {
 		model.addAttribute("pessoas", pessoarepo.findAll());
 		return "pessoas";
+	}*/
+	
+	@RequestMapping("/listar")
+	public ModelAndView listar() {
+		ModelAndView mv = new ModelAndView("index");
+		Iterable<Pessoa> pessoas = pessoarepo.findAll();
+		mv.addObject("pessoas", pessoas);
+		return mv;
 	}
 
 	@GetMapping(path = "/pessoas/editar/{id}")
