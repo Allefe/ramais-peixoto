@@ -22,7 +22,6 @@ public class Funcao implements Serializable{
 	@Column(name = "idfunc")
 	private Integer idFunc;
 	
-	
 	@Column(name = "nomefuncao")
 	@NotBlank
 	private String nomeFunc;
@@ -41,5 +40,8 @@ public class Funcao implements Serializable{
 		this.nomeFunc = nomeFunc;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return this.nomeFunc;
+	}
 }

@@ -38,6 +38,7 @@
 							<li id="lista"><a href="#">Juridico</a></li>
 							<li id="lista">|</li>
 							<li id="lista"><a href="#">Portaria</a></li>
+							<li id="lista"><a href="#">Cedoc</a></li>
 							
 							<!-- abri um modal com formulario para fazer a solicitação -->
 							
@@ -66,10 +67,16 @@
 									</tr>
 								</thead>
 								<tbody>
+								
+								<!-- laço de Construção da Tabela  -->
+								
+								<!-- TECNOLOGIA DA INFORMAÇÃO -->
+								
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable"><h4>TECNOLOGIA DA INFORMAÇÃO</h4></td></tr>
 									<tr th:if="${pessoa.departamento == 'T.I'}" th:each="pessoa : ${pessoas}">
-										<td colspan="6">Teconlogia da Informação<td>
+										
 										<td th:text="${pessoa.nomePessoa}"></td>
-										<td th:text="${pessoa.idFuncao}"></td>
+										<td th:text="${pessoa.funcao}"></td>
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 										
@@ -88,20 +95,278 @@
 												</button>
 											</p></td>
 									</tr>
-
-
-
-
-
-
-
-
-
-									<tr>
-										<td>Allefe Jose Soares Siqueira</td>
-										<td>Operador de Data Center</td>
-										<td>5532</td>
-										<td>allefejss@peixoto.com.br</td>
+									
+								<!-- CONTROLADORIA -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Controladoria</td></tr>
+									<tr th:if="${pessoa.departamento == 'controladoria'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- RECURSOS HUMANOS -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Recursos Humanos</td></tr>
+									<tr th:if="${pessoa.departamento == 'R.H'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- DIRETORIA -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Diretoria</td></tr>
+									<tr th:if="${pessoa.departamento == 'diretoria'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									
+									<!-- DISK CENTER -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Disk Center</td></tr>
+									<tr th:if="${pessoa.departamento == 'disk center'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- LOGISTICA -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Logística</td></tr>
+									<tr th:if="${pessoa.departamento == 'logistica'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- Financeiro -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Financeiro</td></tr>
+									<tr th:if="${pessoa.departamento == 'Financeiro'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- COMERCIAL -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Comercial</td></tr>
+									<tr th:if="${pessoa.departamento == 'comercial'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- M&A -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">M&A</td></tr>
+									<tr th:if="${pessoa.departamento == 'm&a'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- JURIDICO -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Júridico</td></tr>
+									<tr th:if="${pessoa.departamento == 'juridico'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- PORTARIA -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Portaria</td></tr>
+									<tr th:if="${pessoa.departamento == 'portaria'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Edit">
+												<button class="btn btn-primary btn-xs" data-title="Edit"
+													data-toggle="modal" data-target="#edit">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</p></td>
+										<td><p data-placement="top" data-toggle="tooltip"
+												title="Delete">
+												<button class="btn btn-danger btn-xs" data-title="Delete"
+													data-toggle="modal" data-target="#delete">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</p></td>
+									</tr>
+									
+									<!-- CEDOC -->
+							
+									<tr><td colspan="6" style="text-align: center" class="HeaderTable">Cedoc</td></tr>
+									<tr th:if="${pessoa.departamento == 'cedoc'}" th:each="pessoa : ${pessoas}">
+										
+										<td th:text="${pessoa.nomePessoa}"></td>
+										<td th:text="${pessoa.funcao}"></td>
+										<td th:text="${pessoa.ramalPessoa}"></td>
+										<td th:text="${pessoa.emailPessoa}"></td>
+										
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Edit">
 												<button class="btn btn-primary btn-xs" data-title="Edit"

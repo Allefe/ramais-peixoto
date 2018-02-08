@@ -1,3 +1,4 @@
+/*
 package com.peixoto.ramais.model;
 
 import java.io.Serializable;
@@ -10,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotBlank;
-
 
 @Entity
 @Table(name = "setor")
@@ -42,4 +42,4 @@ public class Setor implements Serializable{
 	}
 	
 	
-}
+}*/

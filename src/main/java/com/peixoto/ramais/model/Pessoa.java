@@ -40,7 +40,7 @@ public class Pessoa implements Serializable {
 	private String emailPessoa;
 	
 	@Column(name = "telcorppes")
-	private long telCorpPessoa;
+	private Integer telCorpPessoa;
 	
 	@Column(name = "tippes")
 	private String tipoPessoa;
@@ -66,10 +66,11 @@ public class Pessoa implements Serializable {
 	@NotNull(message = "Função não informada!")
 	private Funcao funcao;
 	
+	/*
 	@ManyToOne(targetEntity = Setor.class)
 	@JoinColumn(name = "idSetor", referencedColumnName = "idset", foreignKey = @ForeignKey(name = "fk_setorPessoa"))
 	@NotNull(message = "Setor não informado!")
-	private Setor setor;
+	private Setor setor; */
 	
 	@ManyToOne(targetEntity = Empresa.class)
 	@JoinColumn(name = "idemp", referencedColumnName = "idemp", foreignKey = @ForeignKey(name = "fk_empresaPessoa"))
@@ -110,7 +111,7 @@ public class Pessoa implements Serializable {
 	public long getTelCorpPessoa() {
 		return telCorpPessoa;
 	}
-	public void setTelCorpPessoa(long telCorpPessoa) {
+	public void setTelCorpPessoa(Integer telCorpPessoa) {
 		this.telCorpPessoa = telCorpPessoa;
 	}
 	public String getTipoPessoa() {
@@ -154,13 +155,13 @@ public class Pessoa implements Serializable {
 	}
 	public void setFuncao(Funcao funcao) {
 		this.funcao = funcao;
-	}
+	}/*
 	public Setor getSetor() {
 		return setor;
 	}
 	public void setSetor(Setor setor) {
 		this.setor = setor;
-	}
+	}*/
 	public Empresa getEmpresa() {
 		return empresa;
 	}

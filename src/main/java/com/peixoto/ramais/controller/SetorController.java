@@ -1,3 +1,4 @@
+/*
 package com.peixoto.ramais.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,4 +45,4 @@ public class SetorController {
 		setorrepo.delete(id);
 		return "redirect:/setor";
 	}
-}
+}*/

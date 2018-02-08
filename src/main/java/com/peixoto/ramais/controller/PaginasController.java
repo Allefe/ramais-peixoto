@@ -55,4 +55,10 @@ public class PaginasController {
 		ModelAndView mv = new ModelAndView("pages/listaramaisadmin/cadastrosetores");
 		return mv;
 	}
+	
+	@GetMapping (value = "/teste")
+	public ModelAndView teste(){
+		ModelAndView mv = new ModelAndView("pages/listaramais/teste");
+		return mv;
+	}
 }
