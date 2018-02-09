@@ -3,58 +3,37 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="'layout/default'">
 
-			<!-- Componente Main -->
-					<div id="middle_content" class="col-sm-12" th:fragment="corporativos">
+
+	<!-- Componente Main -->
+					<div id="middle_content" class="col-sm-12" th:fragment="terceiros">
 						<div class="table-responsive">
-							<table class="table table-striped">
+							<table class="table table-hover">
 
 								<thead>
 									<tr>
 										<th scope="col">Nome</th>
-										<th scope="col"><i class="fa fa-phone-square"
-											style="font-size: 17px"></i> Nº corporativo</th>
-										<th scope="col"><span
-											class="glyphicon glyphicon-envelope"></span> E-mail</th>
+										<th scope="col">Ramo Atividade</th>
+										<th scope="col">Site</th>
 										<th scope="col">Edit</th>
 										<th scope="col">Delete</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Allefe Jose Soares Siqueira</td>
-										<td>3499999999</td>
-										<td>allefejss@peixoto.com.br</td>
+										<td onclick="myFunction(this)">Peixoto Atacadista</td>
+										<td onclick="myFunction(this)">Atacado e Distruibuidor</td>
+										<td onclick="myFunction(this)">www.peixoto.com.br</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Edit">
 												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#editCorporativo">
+													data-toggle="modal" data-target="#editgerentesvendas">
 													<span class="glyphicon glyphicon-pencil"></span>
 												</button>
 											</p></td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
-													data-toggle="modal" data-target="#deleteCorporativo">
-													<span class="glyphicon glyphicon-trash"></span>
-												</button>
-											</p></td>
-									</tr>
-
-									<tr>
-										<td>Allefe Jose Soares Siqueira</td>
-										<td>3499999999</td>
-										<td>allefejss@peixoto.com.br</td>
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#editCorporativo">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Delete">
-												<button class="btn btn-danger btn-xs" data-title="Delete"
-													data-toggle="modal" data-target="#deleteCorporativo">
+													data-toggle="modal" data-target="#deleteterceiros">
 													<span class="glyphicon glyphicon-trash"></span>
 												</button>
 											</p></td>
@@ -64,24 +43,46 @@
 							</table>
 						</div>
 
-						<!-- Modal Solicitar Cadastro Novo-->
-						<div class="modal fade" id="ModalCadastroNovoCorporativo" role="dialog">
+						<!-- Modal Item View -->
+						<div class="modal fade item_view" id="item_view">
 							<div class="modal-dialog modal-lg">
 								<div class="modal-content">
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4 class="modal-title">
-											<i class="fa fa-plus-square" style="font-size: 16px"></i>
-											Solicitar Novo Cadastro
-										</h4>
+											<h3>
+												<i class="material-icons" style="font-size:36px">business</i>
+												Dados da Empresa
+											</h3>
 									</div>
 									<div class="modal-body">
-										<div class="form-group">
-											<form>
-												<label>Nome: </label> <input class="form-control"
-													placeholder="Nome...">
-											</form>
-										</div>
+										<div class="row">
+							                    <div class="col-md-6 item_img">
+							                        <img src="../../images/Logo_peixoto.png" class="img-responsive">
+							                    </div>
+							                    <div class="col-md-6 item_content">
+							                        <h3>
+							                            <span>Peixoto Atacado</span>
+							                            <!--span class="input-group-btn">
+							                                <button class="btn btn-danger btn-xs pull-right"; data-dismiss="modal" data-toggle="modal" data-target="#item_remove"><i class="glyphicon glyphicon-remove" ></i></button>
+							                                <button class="btn btn-warning btn-xs pull-right"; data-dismiss="modal" data-toggle="modal" data-target= "#item_edit"><i class="glyphicon glyphicon-edit" ></i></button>
+							                            </span-->
+							                        </h3>
+							                        <h5>Endereço Empresa</h5>
+							                        <p>Av. José Andraus Gassani. nº 900</p>
+							                        <p>Ramal: 5518</p>
+							                        <p>Estado: Minas Gerais - MG</p>
+							                        <p>Cidade: Uberlandia</p>
+							                        <p>Bairro: Industrial</p>
+							                    </div>
+							                    <h3>
+							                    <i class="fa fa-map-marker" style="font-size:24px"></i>
+							                    Localização: 
+							                    </h3>
+							                    <div class="col-md-12 item_content">
+							                    	
+							                    
+							                    </div>
+							            </div>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-default"
@@ -95,7 +96,7 @@
 
 						<!-- Ínicio Modal de Edição -->
 
-						<div class="modal fade" id="editCorporativo" tabindex="-1" role="dialog"
+						<div class="modal fade" id="editterceiros" tabindex="-1" role="dialog"
 							aria-labelledby="edit" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
@@ -139,7 +140,7 @@
 
 
 						<!-- Ínicio Modal de exclusão -->
-						<div class="modal fade" id="deleteCorporativo" tabindex="-1" role="dialog"
+						<div class="modal fade" id="deleteterceiros" tabindex="-1" role="dialog"
 							aria-labelledby="edit" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
@@ -178,6 +179,6 @@
 						<!-- Fim modal Exclusão -->
 
 					</div>
-
-	
+					<!-- Fim middle_content -->
+					
 </html>

@@ -1,0 +1,172 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="'layout/default'">
+
+<!-- Componente Main -->
+<div id="middle_content" class="col-sm-12" th:fragment="gerentesvendas">
+	<div class="table-responsive">
+		<table class="table table-striped">
+
+			<thead>
+				<tr>
+					<th scope="col">Div</th>
+					<th scope="col">Cargo</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Código RCA</th>
+					<th scope="col">Cidade</th>
+					<th scope="col">Estado</th>
+					<th scope="col"><i class="fa fa-phone-square"
+						style="font-size: 17px"></i> Corporativo</th>
+					<th scope="col"><span class="glyphicon glyphicon-envelope"></span>
+						E-mail</th>
+					<th scope="col">CD</th>
+					<th scope="col">Edit</th>
+					<th scope="col">Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>3</td>
+					<td>Gerente Vendas</td>
+					<td>Allefe Jose Soares Siqueira</td>
+					<td>12647</td>
+					<td>Uberlandia</td>
+					<td>MG</td>
+					<td>3499999999</td>
+					<td>allefejss@peixoto.com.br</td>
+					<td>Praça</td>
+					<td><p data-placement="top" data-toggle="tooltip" title="Edit">
+							<button class="btn btn-primary btn-xs" data-title="Edit"
+								data-toggle="modal" data-target="#editgerentesvendas">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</button>
+						</p></td>
+					<td><p data-placement="top" data-toggle="tooltip"
+							title="Delete">
+							<button class="btn btn-danger btn-xs" data-title="Delete"
+								data-toggle="modal" data-target="#deletegerentesvendas">
+								<span class="glyphicon glyphicon-trash"></span>
+							</button>
+						</p></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+	<!-- Modal Solicitar Cadastro Novo-->
+	<div class="modal fade" id="ModalCadastroNovoCorporativo" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">
+						<i class="fa fa-plus-square" style="font-size: 16px"></i>
+						Solicitar Novo Cadastro
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<form>
+							<label>Nome: </label> <input class="form-control"
+								placeholder="Nome...">
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Fecha container do primeiro modal -->
+
+
+	<!-- Ínicio Modal de Edição -->
+
+	<div class="modal fade" id="editgerentesvendas" tabindex="-1"
+		role="dialog" aria-labelledby="edit" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+					<h4 class="modal-title custom_align" id="Heading">Solicitar
+						edição deste Registro</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input class="form-control " type="text" placeholder="Mohsin">
+					</div>
+					<div class="form-group">
+
+						<input class="form-control " type="text" placeholder="Irshad">
+					</div>
+					<div class="form-group">
+						<textarea rows="2" class="form-control"
+							placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+					</div>
+				</div>
+				<div class="modal-footer ">
+					<button type="button" class="btn btn-default btn-lg"
+						style="width: 100%;">
+						<span class="glyphicon glyphicon-refresh"></span> Solicitar
+						Atualização
+					</button>
+				</div>
+			</div>
+			<!-- /.Fim modal-content -->
+		</div>
+		<!-- /.Fim modal-dialog -->
+
+	</div>
+	<!-- Fim modal Edição -->
+
+
+	<!-- Ínicio Modal de exclusão -->
+	<div class="modal fade" id="deletegerentesvendas" tabindex="-1"
+		role="dialog" aria-labelledby="edit" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+					<h4 class="modal-title custom_align" id="Heading">Excluir este
+						Registro?</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="alert alert-danger">
+						<span class="glyphicon glyphicon-warning-sign"></span> Tem certeza
+						que deseja solicitar a exclusão deste registro?
+					</div>
+
+				</div>
+				<div class="modal-footer ">
+					<button type="button" class="btn btn-success">
+						<span class="glyphicon glyphicon-ok-sign"></span> Sim
+					</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove"></span> Não
+					</button>
+				</div>
+			</div>
+			<!-- /.Fim modal-content -->
+
+		</div>
+		<!-- /.Fim modal-dialog -->
+
+	</div>
+	<!-- Fim modal Exclusão -->
+
+</div>
+<!-- Fim middle_content -->
+
+</html>
