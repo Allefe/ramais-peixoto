@@ -40,7 +40,7 @@ public class Pessoa implements Serializable {
 	private String emailPessoa;
 	
 	@Column(name = "telcorppes")
-	private Integer telCorpPessoa;
+	private String telCorpPessoa;
 	
 	@Column(name = "tippes")
 	private String tipoPessoa;
@@ -60,6 +60,11 @@ public class Pessoa implements Serializable {
 	@Column(name = "departamentopes")
 	private String departamento;
 	
+	@Column(name = "estadopes")
+	private String estadoPessoa;
+	
+	@Column(name = "cidadepes")
+	private String cidadePessoa;
 	
 	@ManyToOne(targetEntity = Funcao.class)
 	@JoinColumn(name = "idFunc", referencedColumnName = "idfunc", foreignKey = @ForeignKey(name = "fk_funcaoPessoa"))
@@ -108,10 +113,10 @@ public class Pessoa implements Serializable {
 	public void setEmailPessoa(String emailPessoa) {
 		this.emailPessoa = emailPessoa;
 	}
-	public long getTelCorpPessoa() {
+	public String getTelCorpPessoa() {
 		return telCorpPessoa;
 	}
-	public void setTelCorpPessoa(Integer telCorpPessoa) {
+	public void setTelCorpPessoa(String telCorpPessoa) {
 		this.telCorpPessoa = telCorpPessoa;
 	}
 	public String getTipoPessoa() {
@@ -173,6 +178,18 @@ public class Pessoa implements Serializable {
 	}
 	public void setFilial(Filial filial) {
 		this.filial = filial;
+	}
+	public String getCidade() {
+		return cidadePessoa;
+	}
+	public void setCidade(String cidadePessoa) {
+		this.cidadePessoa = cidadePessoa;
+	}
+	public String getEstadoPessoa() {
+		return estadoPessoa;
+	}
+	public void setEstadoPessoa(String estadoPessoa) {
+		this.estadoPessoa = estadoPessoa;
 	}
 	
 	

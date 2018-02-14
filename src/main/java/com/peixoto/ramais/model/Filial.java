@@ -40,5 +40,11 @@ public class Filial implements Serializable {
 		this.nomeFilial = nomeFilial;
 	}
 	
+	@Override
+	public String toString() {
+		return this.nomeFilial;
+	}
+	
+	
 	
 }
