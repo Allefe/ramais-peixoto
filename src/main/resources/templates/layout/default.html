@@ -22,8 +22,10 @@
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	
+	
+	
 </head>
-<body style="background-color:#f2f2f2">
+<body style="background-color:#f2f2f2" >
   
   <div class="wrapper">
     <div th:replace="/fragments/header :: header"></div>
@@ -32,7 +34,12 @@
       <section layout:fragment="conteudo"></section>
       
     </div>
-
   </div>
+  
+  	<!-- Api Google Maps - Usada em Terceiros -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	
+    <script type="text/javascript" th:src="@{/js/map.js}"></script>
+    
 </body>
 </html>

@@ -19,19 +19,19 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td onclick="myFunction(this)">Peixoto Atacadista</td>
-										<td onclick="myFunction(this)">Atacado e Distruibuidor</td>
-										<td onclick="myFunction(this)">www.peixoto.com.br</td>
+									<tr th:each="empresa : ${empresas}">
+										<td onclick="myFunction(this)" th:text="${empresa.nomeEmpresa}"></td>
+										<td onclick="myFunction(this)" th:text="${empresa.ramoAtivEmpresa}"></td>
+										<td onclick="myFunction(this)" th:text="${empresa.siteEmpresa}"></td>
 										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
+												title="editterceiros">
 												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#editgerentesvendas">
+													data-toggle="modal" data-target="#editterceiros">
 													<span class="glyphicon glyphicon-pencil"></span>
 												</button>
 											</p></td>
 										<td><p data-placement="top" data-toggle="tooltip"
-												title="Delete">
+												title="deleteterceiros">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
 													data-toggle="modal" data-target="#deleteterceiros">
 													<span class="glyphicon glyphicon-trash"></span>
@@ -57,7 +57,7 @@
 									<div class="modal-body">
 										<div class="row">
 							                    <div class="col-md-6 item_img">
-							                        <img src="../../images/Logo_peixoto.png" class="img-responsive">
+							                        <img src="../../images/Logo_peixoto.png" class="img-responsive"></img>
 							                    </div>
 							                    <div class="col-md-6 item_content">
 							                        <h3>
@@ -74,10 +74,17 @@
 							                        <p>Cidade: Uberlandia</p>
 							                        <p>Bairro: Industrial</p>
 							                    </div>
+							                    <div class="col-sm-6">
 							                    <h3>
 							                    <i class="fa fa-map-marker" style="font-size:24px"></i>
 							                    Localização: 
 							                    </h3>
+							                    </div>
+							                    <!-- Div Api Google -->
+							                    <div class="col-sm-12">
+							                    	<input type="hidden" value="Av. José Andraus Gassani. nº 6000, Uberlandia-MG" id="address-input"></input>
+							                    	<div id="map-canvas"></div>
+							                    </div>
 							                    <div class="col-md-12 item_content">
 							                    	
 							                    

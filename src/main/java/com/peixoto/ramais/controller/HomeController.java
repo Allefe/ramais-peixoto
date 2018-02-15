@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.peixoto.ramais.repository.EmpresaRepository;
 import com.peixoto.ramais.repository.PessoaRepository;
 
 
@@ -15,12 +16,14 @@ import com.peixoto.ramais.repository.PessoaRepository;
 public class HomeController {
 	
 	@Autowired private PessoaRepository pessoarepo;
+	@Autowired private EmpresaRepository empresarepo;
 	
 	@GetMapping
 	public ModelAndView inicio(){
 		ModelAndView mv = new ModelAndView("pages/listaramais/index");
 		
 		mv.addObject("pessoas", pessoarepo.findAll());
+		mv.addObject("empresas", empresarepo.findAll());
 		
 		return mv;
 	}
