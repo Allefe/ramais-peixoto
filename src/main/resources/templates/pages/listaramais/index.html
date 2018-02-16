@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -50,7 +51,7 @@
 									Solicitar Cadastro
 								</button></li>
 						</ul>
-						<br> <br> <br>
+						<br></br> <br></br> <br></br>
 
 						<div class="table-responsive">
 							<table class="table table-striped">
@@ -74,7 +75,8 @@
 									<!-- TECNOLOGIA DA INFORMAÇÃO -->
 
 									<tr class="success">
-										<td colspan="6" style="text-align: center" class="scroll" id="T.I"><h4>Tecnologia da Informação</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="T.I"><h4>Tecnologia da Informação</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'T.I'}"
 										th:each="pessoa : ${pessoas}">
@@ -86,8 +88,8 @@
 
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Edit">
-												<button class="btn btn-outline btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
+												<button class="btn btn-outline btn-primary btn-xs"
+													data-title="Edit" data-toggle="modal" data-target="#edit">
 													<span class="glyphicon glyphicon-pencil"></span>
 												</button>
 											</p></td>
@@ -103,7 +105,10 @@
 									<!-- CONTROLADORIA -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="Controladoria"><h4><a name="controladoria">Controladoria</a></h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="Controladoria"><h4>
+												<a name="controladoria">Controladoria</a>
+											</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'controladoria'}"
 										th:each="pessoa : ${pessoas}">
@@ -132,8 +137,8 @@
 									<!-- RECURSOS HUMANOS -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="R.H"><h4>Recursos
-											Humanos</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="R.H"><h4>Recursos Humanos</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'R.H'}"
 										th:each="pessoa : ${pessoas}">
@@ -162,7 +167,8 @@
 									<!-- DIRETORIA -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="Diretoria"><h4>Diretoria</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="Diretoria"><h4>Diretoria</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'diretoria'}"
 										th:each="pessoa : ${pessoas}">
@@ -192,8 +198,8 @@
 									<!-- DISK CENTER -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="DiskCenter"><h4>Disk
-											Center</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="DiskCenter"><h4>Disk Center</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'disk center'}"
 										th:each="pessoa : ${pessoas}">
@@ -222,7 +228,8 @@
 									<!-- LOGISTICA -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="Logistica"><h4>Logística</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="Logistica"><h4>Logística</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'logistica'}"
 										th:each="pessoa : ${pessoas}">
@@ -251,7 +258,8 @@
 									<!-- Financeiro -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="Financeiro"><h4>Financeiro</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="Financeiro"><h4>Financeiro</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'Financeiro'}"
 										th:each="pessoa : ${pessoas}">
@@ -280,7 +288,8 @@
 									<!-- COMERCIAL -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="Comercial"><h4>Comercial</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="Comercial"><h4>Comercial</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'comercial'}"
 										th:each="pessoa : ${pessoas}">
@@ -309,7 +318,8 @@
 									<!-- M&A -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="M&A"><h4>M&A</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="M&A"><h4>M&A</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'm&a'}"
 										th:each="pessoa : ${pessoas}">
@@ -338,7 +348,8 @@
 									<!-- JURIDICO -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="Juridico"><h4>Júridico</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="Juridico"><h4>Júridico</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'juridico'}"
 										th:each="pessoa : ${pessoas}">
@@ -367,7 +378,8 @@
 									<!-- PORTARIA -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="Portaria"><h4>Portaria</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="Portaria"><h4>Portaria</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'portaria'}"
 										th:each="pessoa : ${pessoas}">
@@ -396,7 +408,8 @@
 									<!-- CEDOC -->
 
 									<tr>
-										<td colspan="6" style="text-align: center" class="scroll" id="Cedoc"><h4>Cedoc</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll"
+											id="Cedoc"><h4>Cedoc</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'cedoc'}"
 										th:each="pessoa : ${pessoas}">
@@ -583,39 +596,14 @@
 				</div>
 				<!-- Fecha 4ª Tab Terceiros -->
 
-				
-				<script type="text/javascript">
-			
-			//Scroll suave atráves da ancora
-			//jQuery(document).ready(function($) { 
-			  //  $(".scroll").click(function(event){        
-			    //    event.preventDefault();
-			      //  $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1000);
-			  // });
-			//});
-			
-			$(function() {
-                $('a').bind('click',function(event){
-                    var $anchor = $(this);
-        
-                  $('html, body').stop().animate({scrollTop: $($anchor.attr('href')).offset().top}, 1000,'easeInOutExpo');
-					
-			// Outras Animações
-			// linear, swing, jswing, easeInQuad, easeInCubic, easeInQuart, easeInQuint, easeInSine, easeInExpo, easeInCirc, easeInElastic, easeInBack, easeInBounce, easeOutQuad, easeOutCubic, easeOutQuart, easeOutQuint, easeOutSine, easeOutExpo, easeOutCirc, easeOutElastic, easeOutBack, easeOutBounce, easeInOutQuad, easeInOutCubic, easeInOutQuart, easeInOutQuint, easeInOutSine, easeInOutExpo, easeInOutCirc, easeInOutElastic, easeInOutBack, easeInOutBounce
-                  
 
-                });
-            });
-
-						
-			function myFunction(x) {
-			  $("#item_view").modal();
-			};
-
-			</script>
+				<script>
+					function myFunction(x) {
+						$("#item_view").modal();
+					};
+				</script>
 
 
-			
 
 			</div>
 			<!-- Fecha tab Content -->
