@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -82,7 +83,7 @@
 										<div class="form-group">
 											<form>
 												<label>Nome: </label> <input class="form-control"
-													placeholder="Nome...">
+													placeholder="Nome..."></input>
 											</form>
 										</div>
 									</div>
@@ -98,7 +99,7 @@
 
 						<!-- Ínicio Modal de Edição -->
 
-						<div class="modal fade" id="editCorporativo" tabindex="-1" role="dialog"
+						<div class="modal fade myformModal" id="editCorporativo" tabindex="-1" role="dialog"
 							aria-labelledby="edit" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
@@ -108,25 +109,26 @@
 											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 										</button>
 										<h4 class="modal-title custom_align" id="Heading">Solicitar
-											edição deste Registro</h4>
+											edição deste Registro?</h4>
 									</div>
 									<div class="modal-body">
+									
+										<!-- placeholder dado vindo do input -->
 										<div class="form-group">
-											<input class="form-control " type="text" placeholder="Mohsin">
+											<label>Nome</label>
+											<input class="form-control " type="text" placeholder="">
 										</div>
 										<div class="form-group">
-
-											<input class="form-control " type="text" placeholder="Irshad">
+											<label>Nº Corporativo</label>
+											<input class="form-control " type="text" placeholder="">
 										</div>
 										<div class="form-group">
-											<textarea rows="2" class="form-control"
-												placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
-
-
+											<label>E-mail</label>
+											<input class="form-control " type="text" placeholder="">
 										</div>
 									</div>
 									<div class="modal-footer ">
-										<button type="button" class="btn btn-default btn-lg"
+										<button type="button" class="btn btn-warning btn-lg"
 											style="width: 100%;">
 											<span class="glyphicon glyphicon-refresh"></span> Solicitar
 											Atualização

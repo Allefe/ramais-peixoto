@@ -21,6 +21,7 @@
 								</thead>
 								<tbody>
 									<tr th:each="empresa : ${empresas}">
+									
 										<td onclick="myFunction(this)" th:text="${empresa.nomeEmpresa}"></td>
 										<td onclick="myFunction(this)" th:text="${empresa.ramoAtivEmpresa}"></td>
 										<td onclick="myFunction(this)" th:text="${empresa.siteEmpresa}"></td>
@@ -38,6 +39,7 @@
 													<span class="glyphicon glyphicon-trash"></span>
 												</button>
 											</p></td>
+										
 									</tr>
 								</tbody>
 

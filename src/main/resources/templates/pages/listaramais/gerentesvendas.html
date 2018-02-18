@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -33,7 +34,7 @@
 				<tr
 					th:if="${pessoa.tipoPessoa == 'Funcionario_Externo_Vendas' && pessoa.codDivPesssoa == 1}"
 					th:each="pessoa : ${pessoas}">
-					
+
 					<td th:text="${pessoa.codDivPessoa}"></td>
 					<td th:text="${pessoa.funcao}"></td>
 					<td th:text="${pessoa.nomePessoa}"></td>
@@ -57,7 +58,7 @@
 							</button>
 						</p></td>
 				</tr>
-				
+
 				<tr class="default">
 					<td colspan="11" style="text-align: center" class="scroll"
 						id="Bahia"><h4>Divisão 2 - CE</h4></td>
@@ -65,7 +66,7 @@
 				<tr
 					th:if="${pessoa.tipoPessoa == 'Funcionario_Externo_Vendas' && pessoa.codDivPesssoa == 2}"
 					th:each="pessoa : ${pessoas}">
-					
+
 					<td th:text="${pessoa.codDivPessoa}"></td>
 					<td th:text="${pessoa.funcao}"></td>
 					<td th:text="${pessoa.nomePessoa}"></td>
@@ -89,7 +90,7 @@
 							</button>
 						</p></td>
 				</tr>
-				
+
 				<tr class="default">
 					<td colspan="11" style="text-align: center" class="scroll"
 						id="Bahia"><h4>Divisão 3 - MG / RJ / ES</h4></td>
@@ -97,7 +98,7 @@
 				<tr
 					th:if="${pessoa.tipoPessoa == 'Funcionario_Externo_Vendas' && pessoa.codDivPesssoa == 3}"
 					th:each="pessoa : ${pessoas}">
-					
+
 					<td th:text="${pessoa.codDivPessoa}"></td>
 					<td th:text="${pessoa.funcao}"></td>
 					<td th:text="${pessoa.nomePessoa}"></td>
@@ -121,7 +122,7 @@
 							</button>
 						</p></td>
 				</tr>
-				
+
 				<tr class="default">
 					<td colspan="11" style="text-align: center" class="scroll"
 						id="Bahia"><h4>Divisão 4 - MA / PI / TO / PA</h4></td>
@@ -129,7 +130,7 @@
 				<tr
 					th:if="${pessoa.tipoPessoa == 'Funcionario_Externo_Vendas' && pessoa.codDivPesssoa == 4}"
 					th:each="pessoa : ${pessoas}">
-					
+
 					<td th:text="${pessoa.codDivPessoa}"></td>
 					<td th:text="${pessoa.funcao}"></td>
 					<td th:text="${pessoa.nomePessoa}"></td>
@@ -153,7 +154,7 @@
 							</button>
 						</p></td>
 				</tr>
-				
+
 				<tr class="default">
 					<td colspan="11" style="text-align: center" class="scroll"
 						id="Bahia"><h4>Divisão 5 - MG / GO / DF</h4></td>
@@ -161,7 +162,7 @@
 				<tr
 					th:if="${pessoa.tipoPessoa == 'Funcionario_Externo_Vendas' && pessoa.codDivPesssoa == 5}"
 					th:each="pessoa : ${pessoas}">
-					
+
 					<td th:text="${pessoa.codDivPessoa}"></td>
 					<td th:text="${pessoa.funcao}"></td>
 					<td th:text="${pessoa.nomePessoa}"></td>
@@ -185,7 +186,7 @@
 							</button>
 						</p></td>
 				</tr>
-				
+
 				<tr class="default">
 					<td colspan="11" style="text-align: center" class="scroll"
 						id="Bahia"><h4>Divisão 7 - SP</h4></td>
@@ -193,7 +194,7 @@
 				<tr
 					th:if="${pessoa.tipoPessoa == 'Funcionario_Externo_Vendas' && pessoa.codDivPesssoa == 7}"
 					th:each="pessoa : ${pessoas}">
-					
+
 					<td th:text="${pessoa.codDivPessoa}"></td>
 					<td th:text="${pessoa.funcao}"></td>
 					<td th:text="${pessoa.nomePessoa}"></td>
@@ -217,7 +218,7 @@
 							</button>
 						</p></td>
 				</tr>
-				
+
 				<tr class="default">
 					<td colspan="11" style="text-align: center" class="scroll"
 						id="Bahia"><h4>Divisão 8 - SP</h4></td>
@@ -225,7 +226,7 @@
 				<tr
 					th:if="${pessoa.tipoPessoa == 'Funcionario_Externo_Vendas' && pessoa.codDivPesssoa == 8}"
 					th:each="pessoa : ${pessoas}">
-					
+
 					<td th:text="${pessoa.codDivPessoa}"></td>
 					<td th:text="${pessoa.funcao}"></td>
 					<td th:text="${pessoa.nomePessoa}"></td>
@@ -249,7 +250,7 @@
 							</button>
 						</p></td>
 				</tr>
-				
+
 			</tbody>
 
 		</table>
@@ -285,7 +286,7 @@
 
 	<!-- Ínicio Modal de Edição -->
 
-	<div class="modal fade" id="editgerentesvendas" tabindex="-1"
+	<div class="modal fade myformModal" id="editgerentesvedas" tabindex="-1"
 		role="dialog" aria-labelledby="edit" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -295,25 +296,63 @@
 						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 					</button>
 					<h4 class="modal-title custom_align" id="Heading">Solicitar
-						edição deste Registro</h4>
+						edição deste Registro?</h4>
 				</div>
 				<div class="modal-body">
+
+<!--
+					<td th:text="${pessoa.codDivPessoa}"></td>
+					<td th:text="${pessoa.funcao}"></td>
+					<td th:text="${pessoa.nomePessoa}"></td>
+					<td th:text="${pessoa.codRcaPessoa}"></td>
+					<td th:text="${pessoa.cidadePessoa}"></td>
+					<td th:text="${pessoa.estadoPessoa}"></td>
+					<td th:text="${pessoa.telCorpPessoa}"></td>
+					<td th:text="${pessoa.emailPessoa}"></td>
+					<td th:text="${pessoa.cdPrxPessoa}"></td>
+
+-->
+
+					<!-- placeholder dado vindo do input -->
 					<div class="form-group">
-						<input class="form-control " type="text" placeholder="Mohsin">
+						<label>Divisão</label> <input class="form-control " type="text"
+							placeholder="">
 					</div>
 					<div class="form-group">
-
-						<input class="form-control " type="text" placeholder="Irshad">
+						<label>Função</label> <input class="form-control " type="text"
+							placeholder="">
 					</div>
 					<div class="form-group">
-						<textarea rows="2" class="form-control"
-							placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
-
-
+						<label>Nome</label> <input class="form-control " type="text"
+							placeholder="">
+					</div>
+					<div class="form-group">
+						<label>RCA</label> <input class="form-control " type="text"
+							placeholder="">
+					</div>
+					<div class="form-group">
+						<label>Cidade</label> <input class="form-control " type="text"
+							placeholder="">
+					</div>
+					<div class="form-group">
+						<label>Estado</label> <input class="form-control " type="text"
+							placeholder="">
+					</div>
+					<div class="form-group">
+						<label>Corporativo</label> <input class="form-control " type="text"
+							placeholder="">
+					</div>
+					<div class="form-group">
+						<label>E-mail</label> <input class="form-control " type="text"
+							placeholder="">
+					</div>
+					<div class="form-group">
+						<label>CD mais próximo</label> <input class="form-control " type="text"
+							placeholder="">
 					</div>
 				</div>
 				<div class="modal-footer ">
-					<button type="button" class="btn btn-default btn-lg"
+					<button type="button" class="btn btn-warning btn-lg"
 						style="width: 100%;">
 						<span class="glyphicon glyphicon-refresh"></span> Solicitar
 						Atualização
