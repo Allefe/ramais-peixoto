@@ -193,5 +193,11 @@ public class Pessoa implements Serializable {
 	}
 	
 	
+	public String toString() {
+		return "Pessoa [idPessoa=" + idPessoa + ", nomePessoa=" + nomePessoa + ", ramalPessoa=" + ramalPessoa
+				+ ", emailPessoa=" + emailPessoa + ", funcao=" + funcao + "]";
+	}
+	
+	
 	
 }

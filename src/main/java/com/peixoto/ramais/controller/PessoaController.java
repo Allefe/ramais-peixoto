@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.peixoto.ramais.model.Pessoa;
 import com.peixoto.ramais.repository.PessoaRepository;
@@ -25,7 +26,8 @@ public class PessoaController {
 	@PostMapping(path = "/salvar/pessoas")
 	public String salvarPessoa(Pessoa pessoa) {
 		pessoarepo.save(pessoa);
-		return "redirect:/";
+		
+		return "redirect:/contatospxt";
 	}
 
 	/*
@@ -33,15 +35,22 @@ public class PessoaController {
 	 * model.addAttribute("pessoas", pessoarepo.findAll()); return "pessoas"; }
 	 */
 
+	@GetMapping("/findOne")
+	@ResponseBody
+	public Pessoa findOne(Integer id) {
+		return pessoarepo.findOne(id);
+		
+	}
+	
 	@GetMapping(path = "/pessoas/editar/{id}")
 	public String editarPessoa(Model model, @PathVariable(value = "id") Integer id) {
 		model.addAttribute("pessoa", pessoarepo.findOne(id));
-		return "editar";
+		return "redirect:/contatospxt/";
 	}
 
 	@GetMapping(path = "/pessoas/deletar/{id}")
 	public String deletarPessoa(@PathVariable(name = "id") Integer id) {
 		pessoarepo.delete(id);
-		return "redirect:/pessoas";
+		return "redirect:/contatospxt";
 	}
 }
