@@ -12,36 +12,37 @@
 		<div class="container">
 
 			<div class="tab-content">
-
+				
 				<div id="home" class="tab-pane fade in active">
 					<!-- Componente Main -->
 					<div id="middle_content" class="col-sm-12">
-
-						<ul id="lista_setores">
-							<li id="lista" class="scroll"><a href="#T.I">T.I</a></li>
+						
+						
+						<ul class="nav-list">
+							<li id="lista"><a href="#T.I">T.I</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#Controladoria">Controladoria</a></li>
+							<li id="lista"><a href="#Controladoria">Controladoria</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#R.H">R.H</a></li>
+							<li id="lista"><a href="#R.H">R.H</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#Diretoria">Diretoria</a></li>
+							<li id="lista"><a href="#Diretoria">Diretoria</a></li>
 							<li id="lista" >|</li>
-							<li id="lista" class="scroll"><a href="#DiskCenter">Disk Center</a></li>
+							<li id="lista"><a href="#DiskCenter">Disk Center</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#Logistica">Logistica</a></li>
+							<li id="lista"><a href="#Logistica">Logistica</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#Financeiro">Financeiro</a></li>
+							<li id="lista"><a href="#Financeiro">Financeiro</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#Comercial">Comercial</a></li>
+							<li id="lista"><a href="#Comercial">Comercial</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#M&A">M&A</a></li>
+							<li id="lista"><a href="#M&A">M&A</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#Juridico">Juridico</a></li>
+							<li id="lista"><a href="#Juridico">Juridico</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#Portaria">Portaria</a></li>
+							<li id="lista"><a href="#Portaria">Portaria</a></li>
 							<li id="lista">|</li>
-							<li id="lista" class="scroll"><a href="#Cedoc">Cedoc</a></li>
-
+							<li id="lista"><a href="#Cedoc">Cedoc</a></li>
+							
 							<!-- abri um modal com formulario para fazer a solicitação -->
 
 							<li id="lista" style="float: right"><button
@@ -51,6 +52,7 @@
 									Solicitar Cadastro
 								</button></li>
 						</ul>
+						
 						<br></br> <br></br> <br></br>
 
 						<div class="table-responsive">
@@ -73,7 +75,7 @@
 									<!-- laço de Construção da Tabela  -->
 
 									<!-- TECNOLOGIA DA INFORMAÇÃO -->
-
+									
 									<tr style="background-color:#0A6E9E; color:white;">
 										<td colspan="6" style="text-align: center" class="scroll"
 											id="T.I"><h4>Tecnologia da Informação</h4></td>
@@ -86,12 +88,16 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
+<!-- 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Edit">
-												<a th:href="@{findOne/(id=${pessoa.idPessoa})}" class="btn btn-primary btn-xs eBtn"><!-- eBtn será usado no Jquery para envio dos dados ao modal -->
+												<a th:href="@{findOne/(id=${pessoa.idPessoa})}" class="btn btn-primary btn-xs eBtn">eBtn será usado no Jquery para envio dos dados ao modal
 													<span class="glyphicon glyphicon-pencil"></span>
 												</a>
-											</p></td>
+											</p></td> -->
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -100,12 +106,12 @@
 												</button>
 											</p></td>
 									</tr>
-
+									
+									
 									<!-- CONTROLADORIA -->
-
+									
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="Controladoria"><h4>Controladoria</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="Controladoria"><h4>Controladoria</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'controladoria'}"
 										th:each="pessoa : ${pessoas}">
@@ -115,13 +121,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -134,8 +137,7 @@
 									<!-- RECURSOS HUMANOS -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="R.H"><h4>Recursos Humanos</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="R.H"><h4>Recursos Humanos</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'R.H'}"
 										th:each="pessoa : ${pessoas}">
@@ -145,13 +147,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -164,8 +163,7 @@
 									<!-- DIRETORIA -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="Diretoria"><h4>Diretoria</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="Diretoria"><h4>Diretoria</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'diretoria'}"
 										th:each="pessoa : ${pessoas}">
@@ -175,13 +173,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -195,8 +190,7 @@
 									<!-- DISK CENTER -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="DiskCenter"><h4>Disk Center</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="DiskCenter"><h4>Disk Center</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'disk center'}"
 										th:each="pessoa : ${pessoas}">
@@ -206,13 +200,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -225,8 +216,7 @@
 									<!-- LOGISTICA -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="Logistica"><h4>Logística</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="Logistica"><h4>Logística</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'logistica'}"
 										th:each="pessoa : ${pessoas}">
@@ -236,13 +226,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -255,8 +242,7 @@
 									<!-- Financeiro -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="Financeiro"><h4>Financeiro</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="Financeiro"><h4>Financeiro</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'Financeiro'}"
 										th:each="pessoa : ${pessoas}">
@@ -266,13 +252,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -285,8 +268,7 @@
 									<!-- COMERCIAL -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="Comercial"><h4>Comercial</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="Comercial"><h4>Comercial</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'comercial'}"
 										th:each="pessoa : ${pessoas}">
@@ -296,13 +278,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -315,8 +294,7 @@
 									<!-- M&A -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="M&A"><h4>M&A</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="M&A"><h4>M&A</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'm&a'}"
 										th:each="pessoa : ${pessoas}">
@@ -326,13 +304,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -345,8 +320,7 @@
 									<!-- JURIDICO -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="Juridico"><h4>Júridico</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="Juridico"><h4>Júridico</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'juridico'}"
 										th:each="pessoa : ${pessoas}">
@@ -356,13 +330,10 @@
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
 
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -375,8 +346,7 @@
 									<!-- PORTARIA -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="Portaria"><h4>Portaria</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="Portaria"><h4>Portaria</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'portaria'}"
 										th:each="pessoa : ${pessoas}">
@@ -385,14 +355,10 @@
 										<td th:text="${pessoa.funcao}"></td>
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
-
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -405,8 +371,7 @@
 									<!-- CEDOC -->
 
 									<tr style="background-color:#0A6E9E; color:white;">
-										<td colspan="6" style="text-align: center" class="scroll"
-											id="Cedoc"><h4>Cedoc</h4></td>
+										<td colspan="6" style="text-align: center" class="scroll" id="Cedoc"><h4>Cedoc</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'cedoc'}"
 										th:each="pessoa : ${pessoas}">
@@ -415,14 +380,10 @@
 										<td th:text="${pessoa.funcao}"></td>
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
-
-										<td><p data-placement="top" data-toggle="tooltip"
-												title="Edit">
-												<button class="btn btn-primary btn-xs" data-title="Edit"
-													data-toggle="modal" data-target="#edit">
-													<span class="glyphicon glyphicon-pencil"></span>
-												</button>
-											</p></td>
+										<td>
+											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
+										</td>
 										<td><p data-placement="top" data-toggle="tooltip"
 												title="Delete">
 												<button class="btn btn-danger btn-xs" data-title="Delete"
@@ -465,61 +426,7 @@
 						<!-- Fecha container do primeiro modal -->
 
 
-						<!-- Ínicio Modal de Edição -->
-						<div class="myFormModal">
-						<form th:action="@{/salvar/pessoas}" method="post">
-						<!--  form -->
-						<div class="modal fade" id="edit" tabindex="-1" role="dialog"
-							aria-labelledby="edit" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal"
-											aria-hidden="true">
-											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-										</button>
-										<h4 class="modal-title custom_align" id="Heading">Solicitar
-											edição deste Registro?</h4>
-									</div>
-									<div class="modal-body">
-									
-										<!-- value dado vindo do input -->
-										<div class="form-group">
-											
-											<input class="form-control " type="hidden" id="id" name="id" value="">
-										</div>
-										<div class="form-group">
-											<label for="nome" class="form-control-label">Nome</label>
-											<input class="form-control " type="text" id="nome" name="nome" value="">
-										</div>
-										<div class="form-group">
-											<label for="cargo" class="form-control-label">Cargo</label>
-						 					<input class="form-control " type="text" id="funcao" name="cargo" value="">
-										</div>
-										<div class="form-group">	
-											<label for="ramal" class="form-control-label">Ramal</label>
-											<input class="form-control " type="text" id="ramal" name="ramal" value="">
-										</div>
-										<div class="form-group">
-											<label for="email" class="form-control-label">E-mail</label>
-											<input class="form-control " type="text" id="email" name="email" value="">
-										</div>
-									</div>
-									<div class="modal-footer ">
-										<input type="submit" class="btn btn-warning btn-lg" value="salvar"
-											style="width: 100%;">
-											<span class="glyphicon glyphicon-refresh"></span> Solicitar
-											Atualização
-										<input/>
-									</div>
-								</div>
-								<!-- /.Fim modal-content -->
-							</div>
-							<!-- /.Fim modal-dialog -->
-						</div>
-						</form>
-						</div>
-						<!-- Fim modal Edição -->
+						
 
 
 						<!-- Ínicio Modal de exclusão -->
@@ -607,12 +514,12 @@
 
 
 				<script>
+				
 					function myFunction(x) {
 						$("#item_view").modal();
 					};
+				
 				</script>
-
-
 
 			</div>
 			<!-- Fecha tab Content -->

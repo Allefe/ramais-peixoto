@@ -7,10 +7,10 @@ $(document).ready(function(){
 		event.preventDefault();
 		var href = $(this).attr('href');
 		
-		$.get(href,function(pessoa,status){
+		$.get(href,function(pessoa, funcao,status){
 			$('.myFormModal #id').val(pessoa.idPessoa);
 			$('.myFormModal #nome').val(pessoa.nomePessoa);
-			$('.myFormModal #funcao').val(pessoa.funcao.nomefunc);
+			$('.myFormModal #funcao').val(pessoa.funcao);
 			$('.myFormModal #ramal').val(pessoa.ramalPessoa);
 			$('.myFormModal #email').val(pessoa.emailPessoa);
 			
