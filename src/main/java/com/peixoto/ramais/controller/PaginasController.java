@@ -56,9 +56,12 @@ public class PaginasController {
 		return mv;
 	}
 	
+	//classe para testes....
 	@GetMapping (value = "/teste")
 	public ModelAndView teste(){
 		ModelAndView mv = new ModelAndView("pages/listaramais/teste");
 		return mv;
 	}
+
+	
 }

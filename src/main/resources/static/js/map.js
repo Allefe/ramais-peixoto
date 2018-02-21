@@ -23,7 +23,6 @@ function initialize() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-
 function searchAddress() {
 
   var addressInput = document.getElementById('address-input').value;
