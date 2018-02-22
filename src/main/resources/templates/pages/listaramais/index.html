@@ -47,11 +47,13 @@
 
 							<li id="lista" style="float: right"><button
 									class="btn btn-success navbar-btn btn-sm" data-toggle="modal"
-									data-target="#ModalCadastroNovo" style="float: right">
+									th:href=" '#modaladicionar' " style="float: right">
 									<i class="fa fa-plus-square" style="font-size: 16px"></i>
 									Solicitar Cadastro
 								</button></li>
 						</ul>
+						
+						<div th:replace="fragments/modals/modaladicionar :: modaladicionar"></div>
 						
 						<br></br> <br></br> <br></br>
 
@@ -397,34 +399,7 @@
 							</table>
 						</div>
 
-						<!-- Modal Solicitar Cadastro Novo-->
-						<div class="modal fade" id="ModalCadastroNovo" role="dialog">
-							<div class="modal-dialog modal-lg">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4 class="modal-title">
-											<i class="fa fa-plus-square" style="font-size: 16px"></i>
-											Solicitar Novo Cadastro
-										</h4>
-									</div>
-									<div class="modal-body">
-										<div class="form-group">
-											<form>
-												<label>Nome: </label> <input class="form-control"
-													placeholder="Nome...">
-											</form>
-										</div>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default"
-											data-dismiss="modal">Close</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Fecha container do primeiro modal -->
-
+						
 
 						
 
