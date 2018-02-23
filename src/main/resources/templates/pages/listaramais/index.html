@@ -18,7 +18,7 @@
 					<div id="middle_content" class="col-sm-12">
 						
 						
-						<ul class="nav-list">
+						<ul id="topo" class="scroll nav-list">
 							<li id="lista"><a href="#T.I">T.I</a></li>
 							<li id="lista">|</li>
 							<li id="lista"><a href="#Controladoria">Controladoria</a></li>
@@ -78,7 +78,7 @@
 
 									<!-- TECNOLOGIA DA INFORMAÇÃO -->
 									
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll"
 											id="T.I"><h4>Tecnologia da Informação</h4></td>
 									</tr>
@@ -112,7 +112,7 @@
 									
 									<!-- CONTROLADORIA -->
 									
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="Controladoria"><h4>Controladoria</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'controladoria'}"
@@ -138,7 +138,7 @@
 
 									<!-- RECURSOS HUMANOS -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="R.H"><h4>Recursos Humanos</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'R.H'}"
@@ -164,7 +164,7 @@
 
 									<!-- DIRETORIA -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="Diretoria"><h4>Diretoria</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'diretoria'}"
@@ -191,7 +191,7 @@
 
 									<!-- DISK CENTER -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="DiskCenter"><h4>Disk Center</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'disk center'}"
@@ -217,7 +217,7 @@
 
 									<!-- LOGISTICA -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="Logistica"><h4>Logística</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'logistica'}"
@@ -243,7 +243,7 @@
 
 									<!-- Financeiro -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="Financeiro"><h4>Financeiro</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'Financeiro'}"
@@ -269,7 +269,7 @@
 
 									<!-- COMERCIAL -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="Comercial"><h4>Comercial</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'comercial'}"
@@ -295,7 +295,7 @@
 
 									<!-- M&A -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="M&A"><h4>M&A</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'm&a'}"
@@ -321,7 +321,7 @@
 
 									<!-- JURIDICO -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="Juridico"><h4>Júridico</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'juridico'}"
@@ -347,7 +347,7 @@
 
 									<!-- PORTARIA -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="Portaria"><h4>Portaria</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'portaria'}"
@@ -372,7 +372,7 @@
 
 									<!-- CEDOC -->
 
-									<tr style="background-color:#0A6E9E; color:white;">
+									<tr style="background-color:#e6e6e6; color:black;">
 										<td colspan="6" style="text-align: center" class="scroll" id="Cedoc"><h4>Cedoc</h4></td>
 									</tr>
 									<tr th:if="${pessoa.departamento == 'cedoc'}"
@@ -398,8 +398,16 @@
 
 							</table>
 						</div>
-
 						
+						
+						<nav class="nav-list">
+							<a href="#topo" id="Flutuante" class="btn btn-danger flutua btn-circle btn-lg"><span class="fa fa-level-up">
+						</span></a>
+						</nav>
+							
+						
+
+						<!-- <input id="Flutuante"   href="#lista" class="btn btn-danger class btn-circle btn-lg"><i class="fa fa-level-up"></i><input/> -->
 
 						
 
@@ -503,5 +511,7 @@
 		<!-- fecha /container -->
 
 	</section>
+	
+	
 </body>
 </html>
