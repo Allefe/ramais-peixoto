@@ -10,8 +10,8 @@ $(document).ready(function() {
     $('#system-search').keyup( function() {
        var that = this;
         // afeta todas as linhas da tabela do sistema
-        var tableBody = $('.table table-striped tbody');
-        var tableRowsClass = $('.table table-striped tbody tr');
+        var tableBody = $('.table-striped tbody');
+        var tableRowsClass = $('.table-striped tbody tr');
         $('.search-sf').remove();
         tableRowsClass.each( function(i, val) {
         

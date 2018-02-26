@@ -357,7 +357,7 @@
 										<td th:text="${pessoa.funcao}"></td>
 										<td th:text="${pessoa.ramalPessoa}"></td>
 										<td th:text="${pessoa.emailPessoa}"></td>
-<td>
+										<td>
 											<a data-toggle="modal" th:href="'#modalEdit'+${pessoa.idPessoa}" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
 				                          	<div th:replace="fragments/modals/modalEdit :: modalEdit"></div>
 										</td>
@@ -401,7 +401,7 @@
 						
 						
 						<nav class="nav-list">
-							<a href="#topo" id="Flutuante" class="btn btn-danger flutua btn-circle btn-lg"><span class="fa fa-level-up">
+							<a href="#topo" id="Flutuante" class="btn btn-danger flutua btn-circle btn-lg" title="Ir ao Topo"><span class="fa fa-level-up">
 						</span></a>
 						</nav>
 							
