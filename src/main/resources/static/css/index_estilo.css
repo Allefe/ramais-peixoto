@@ -69,4 +69,41 @@ height: 50px;
 .process-step{display:table-cell;text-align:right;position:relative;width:200px;height:100px;}
 .process-step p{margin-top:4px}
 .btn-circle{width:80px;height:80px;text-align:center;font-size:12px;border-radius:50%}
-#menu1, #menu2, #menu3, #menu4, #menu5{width:770px;height:max-content;position:relative} 
+#menu1, #menu2, #menu3, #menu4, #menu5{width:770px;height:max-content;position:relative}
+
+
+
+<!-- Botão outline -->
+
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+    background-color:transparent;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+    background-color:transparent;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+    background-color:transparent;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+    background-color:transparent;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
