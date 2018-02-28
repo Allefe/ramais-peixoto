@@ -56,6 +56,12 @@ public class PaginasController {
 		return mv;
 	}
 	
+	@GetMapping (value = "/login")
+	public ModelAndView Login(){
+		ModelAndView mv = new ModelAndView("pages/login");
+		return mv;
+	}
+	
 	//classe para testes....
 	@GetMapping (value = "/teste")
 	public ModelAndView teste(){
@@ -64,10 +70,15 @@ public class PaginasController {
 	}
 
 	//classe para testes....
-		@GetMapping (value = "/teste2")
-		public ModelAndView teste2(){
-			ModelAndView mv = new ModelAndView("pages/listaramais/teste2");
-			return mv;
-		}
-
+	@GetMapping (value = "/teste2")
+	public ModelAndView teste2(){
+		ModelAndView mv = new ModelAndView("pages/listaramais/teste2");
+		return mv;
+	}
+	
+	@GetMapping (value = "/maps")
+	public ModelAndView Maps(){
+		ModelAndView mv = new ModelAndView("fragments/mapa/maps");
+		return mv;
+	}
 }

@@ -27,13 +27,8 @@
 										<td onclick="myFunction(this)" th:text="${empresa.ramoAtivEmpresa}"></td>
 										<td onclick="myFunction(this)" th:text="${empresa.siteEmpresa}"></td>
 										<td>
-											<p data-placement="top" data-toggle="tooltip"
-												title="Mais Dados">
-												<button class="btn btn-warning btn-xs" data-title="mais"
-													data-toggle="modal" data-target="#">
-													<span class="glyphicon glyphicon-plus"></span>
-												</button>
-											</p>
+											<a data-toggle="modal" th:href=" '#item_view' " class="btn btn-warning btn-xs" title="mais" onclick="geocodeAddress()"><span class="glyphicon glyphicon-plus"></span></a>
+				                        <div th:replace="fragments/modals/modalterceiros :: modalterceiros"></div>
 										</td>
 										<td>
 											<p data-placement="top" data-toggle="tooltip"
@@ -60,8 +55,9 @@
 							</table>
 						</div>
 
+
 						<!-- Modal Item View -->
-						<div class="modal fade item_view" id="item_view">
+						<!-- <div class="modal fade item_view" id="item_view">
 							<div class="modal-dialog modal-lg">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -79,10 +75,10 @@
 							                    <div class="col-md-6 item_content">
 							                        <h3>
 							                            <span>Peixoto Atacado</span>
-							                            <!--span class="input-group-btn">
+							                            span class="input-group-btn">
 							                                <button class="btn btn-danger btn-xs pull-right"; data-dismiss="modal" data-toggle="modal" data-target="#item_remove"><i class="glyphicon glyphicon-remove" ></i></button>
 							                                <button class="btn btn-warning btn-xs pull-right"; data-dismiss="modal" data-toggle="modal" data-target= "#item_edit"><i class="glyphicon glyphicon-edit" ></i></button>
-							                            </span-->
+							                            </span
 							                        </h3>
 							                        <h5>Endereço Empresa</h5>
 							                        <p>Av. José Andraus Gassani. nº 900</p>
@@ -98,7 +94,7 @@
 							                    </h3>
 							                    </div>
 							                    
-							                    <!-- Div Api Google -->
+							                    Div Api Google
 							                    <div class="col-sm-12">
 							                    	
 							                    </div>
@@ -111,7 +107,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<!-- Fecha container do primeiro modal -->
 
 

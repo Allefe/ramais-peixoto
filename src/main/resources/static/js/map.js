@@ -1,59 +1,31 @@
-/*
- * Peixoto Comércio Industria Serviços e Transportes
- * Allefe José Soares Siqueira
- * 2018 - www.peixoto.com.br
- *
- */
+function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: {lat: -34.397, lng: 150.644}
+        });
+        var geocoder = new google.maps.Geocoder();
+		
+        //chamo a função sem ter que clicar no bt
+        geocodeAddress(geocoder, map);
+        
+        //chama da função ao clicar no botão
+        /* document.getElementById('address').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+         
+        }); */
+      }
 
-var map;
-var marker;
-
-
-function initialize() {
-
-	var mapOptions = {
-		center: new google.maps.LatLng(40.680898,-8.684059),
-		zoom: 11,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-
-	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-function searchAddress() {
-
-  var addressInput = document.getElementById('address-input').value;
-
-	var geocoder = new google.maps.Geocoder();
-
-	geocoder.geocode({address: addressInput}, function(results, status) {
-
-		if (status == google.maps.GeocoderStatus.OK) {
-
-      var myResult = results[0].geometry.location;
-
-      createMarker(myResult);
-
-      map.setCenter(myResult);
-
-      map.setZoom(17);
-		}
-	});
-
-}
-
-function createMarker(latlng) {
-
-  if(marker != undefined && marker != ''){
-    marker.setMap(null);
-    marker = '';
-  }
-
-  marker = new google.maps.Marker({
-    map: map,
-    position: latlng
-  });
-}
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('O Geocode não foi bem sucedido pelo seguinte motivo: ' + status);
+          }
+        });
+      }

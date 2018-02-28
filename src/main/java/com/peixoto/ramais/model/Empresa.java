@@ -56,6 +56,9 @@ public class Empresa implements Serializable {
 	@OneToMany(targetEntity = Telefone.class, mappedBy="empresa")
 	private List <Telefone> telefone;
 	
+	@Column(name = "imagempath")
+	private String imagemPath;
+	
 	
 	public Integer getIdEmpresa() {
 		return idEmpresa;
@@ -123,8 +126,13 @@ public class Empresa implements Serializable {
 	public void setTelefones(List<Telefone> telefones) {
 		this.telefone = telefones;
 	}
+	public String getImagemPath() {
+		return imagemPath;
+	}
+	public void setImagemPath(String imagemPath) {
+		this.imagemPath = imagemPath;
+	}
 	
-	
-	
+
 	
 }

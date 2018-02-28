@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 import com.peixoto.ramais.model.Empresa;
 import com.peixoto.ramais.repository.EmpresaRepository;
@@ -24,9 +26,16 @@ public class EmpresaController {
 	
 	
 	@PostMapping(path = "/salvar/empresas")
-    public String salvarEmpresa(Empresa empresa) {
+	//Recebe um multipartfile com o nome de imagem definido no form de envio
+    public String salvarEmpresa(MultipartFile imagem, Empresa empresa) {
+		
+		//Irá exibir no console o nome original do arquivo
+		System.out.print(imagem.getOriginalFilename());
+		
         empresarepo.save(empresa);
         return "redirect:/empresas";
+        
+        
     }
 	
 	 @GetMapping(path = "/listar/empresas")
