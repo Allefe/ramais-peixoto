@@ -1,15 +1,16 @@
 <!DOCTYPE>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>
-    <title>Geocoding service</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+   
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
         height: 100%;
+        
+
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -32,12 +33,15 @@
       }
     </style>
   </head>
+  <!-- th:id="'maps'+${empresa.idEmpresa}" -->
   <body onload="geocodeAddress();">
-    
-      <input id="address" type="hidden" value="Uberlandia, MG">
-      <!-- <input id="submit" type="button" value="Geocode"> -->
-   
-    <div id="map"></div>
+  <div th:fragment="maps">
+    <form th:object="${empresa}">
+      	<input id="address" type="hidden" value="Uberlandia, MG">
+   <!-- <input id="submit" type="button" value="Geocode"> -->
+    	<div id="map"></div>
+    </form>
+   </div>
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
