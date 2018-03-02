@@ -18,7 +18,7 @@
 											</h3>
 									</div>
 									<div class="modal-body">
-										<div class="row">
+										<div class="row" style="height:600px; width:600px" >
 							                    <div class="col-md-6 item_img">
 							                        <img src="../../images/Logo_peixoto.png" class="img-responsive"></img>
 							                    </div>
@@ -46,8 +46,11 @@
 							                    
 							                    <!-- Div Api Google -->
 							                    
-							                    <div class="col-sm-12">
-							                    	<div th:replace="fragments/mapa/maps :: maps"></div>
+							                    <div class="maps">
+							                    	<div class="h_iframe" >
+							                    		<iframe th:src="@{/maps}" class="embed-responsive-item" height="250px" width="100%" MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 SPACE=0 FRAMEBORDER=0 SCROLLING=NO></iframe>
+							                    		<!-- <div th:replace="fragments/mapa/maps :: maps"></div> -->
+							                    	</div>
 							                    </div>
 							                    
 							            </div>
