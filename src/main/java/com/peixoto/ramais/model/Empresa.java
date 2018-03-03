@@ -57,8 +57,40 @@ public class Empresa implements Serializable {
 	private List <Telefone> telefone;
 	
 	@Column(name = "imagempath")
-	private String imagemPath;
+	private String logoEmpresaPath;
 	
+	@Column(name = "horafunciomamentoSegSex")
+	private String funciomanentoSegSexta;
+	
+	public List<Telefone> getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(List<Telefone> telefone) {
+		this.telefone = telefone;
+	}
+	public String getFunciomanentoSegSexta() {
+		return funciomanentoSegSexta;
+	}
+	public void setFunciomanentoSegSexta(String funciomanentoSegSexta) {
+		this.funciomanentoSegSexta = funciomanentoSegSexta;
+	}
+	public String getFunciomanentoSabado() {
+		return funciomanentoSabado;
+	}
+	public void setFunciomanentoSabado(String funciomanentoSabado) {
+		this.funciomanentoSabado = funciomanentoSabado;
+	}
+	public String getFunciomanentoDomingo() {
+		return funciomanentoDomingo;
+	}
+	public void setFunciomanentoDomingo(String funciomanentoDomingo) {
+		this.funciomanentoDomingo = funciomanentoDomingo;
+	}
+	@Column(name = "horafunciomamentoSab")
+	private String funciomanentoSabado;
+	
+	@Column(name = "horafunciomamentoDom")
+	private String funciomanentoDomingo;
 	
 	public Integer getIdEmpresa() {
 		return idEmpresa;
@@ -127,10 +159,10 @@ public class Empresa implements Serializable {
 		this.telefone = telefones;
 	}
 	public String getImagemPath() {
-		return imagemPath;
+		return logoEmpresaPath;
 	}
-	public void setImagemPath(String imagemPath) {
-		this.imagemPath = imagemPath;
+	public void setImagemPath(String logoEmpresaPath) {
+		this.logoEmpresaPath = logoEmpresaPath;
 	}
 	
 

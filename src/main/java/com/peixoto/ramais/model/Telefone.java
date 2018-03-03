@@ -21,10 +21,10 @@ public class Telefone implements Serializable {
 	private Integer idTelefone;
 
 	@Column(name = "numtel")
-	private long numTelefoneContato;
+	private String numTelefoneContato;
 
 	@ManyToOne
-	@JoinColumn(name = "idEmpresa", referencedColumnName = "idemp", foreignKey = @ForeignKey(name = "fk_telefoneEmpresa"))
+	@JoinColumn(name = "idemp", referencedColumnName = "idemp", foreignKey = @ForeignKey(name = "fk_telefoneEmpresa"))
 	private Empresa empresa;
 
 	public Integer getIdTelefone() {
@@ -35,11 +35,11 @@ public class Telefone implements Serializable {
 		this.idTelefone = idTelefone;
 	}
 
-	public long getNumTelefoneContato() {
+	public String getNumTelefoneContato() {
 		return numTelefoneContato;
 	}
 
-	public void setNumTelefoneContato(long numTelefoneContato) {
+	public void setNumTelefoneContato(String numTelefoneContato) {
 		this.numTelefoneContato = numTelefoneContato;
 	}
 

@@ -6,8 +6,9 @@
 
 <!-- Modal Item View -->
 
-	
-						<div class="modal fade item_view" id="item_view" th:fragment="modalterceiros">
+					<form  th:object="${empresa}">
+						<div class="modal fade item_view" th:id="'item_view' + ${empresa.idEmpresa}" th:fragment="modalterceiros">
+							
 							<div class="modal-dialog modal-lg">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -38,37 +39,32 @@
 							                          <table class="table">
 													    <thead>
 													      <tr>
-													        <th colspan="5"><h3>Peixoto Atacado</h3></th>
+													        <th colspan="5"><h3 th:text="${empresa.nomeEmpresa}"></h3></th>
 													      </tr>
 													    </thead>
 													    <tbody>
 													      <tr>
-													        <td><b>Endereço Empresa:</b> Av. José Andraus Gassani. nº 900</td>
-													        <td><b>Estado:</b> Minas Gerais - MG</td>
+													        <td th:text="${empresa.endRuaAveNumEmpresa}"><b>Endereço Empresa:</b></td>
+													        <td th:text="${empresa.endEstadoEmpresa}"><b>Estado:</b></td>
 													      </tr>
 													      <tr>
-													        <td>
-													        	<label>
-													        		<b>Cidade:</b>
-													        	</label> 
-													        	Uberlandia
-													        </td>
-													        <td><b>Bairro:</b> Industrial</td>
+													        <td th:text="${empresa.endCidadeEmpresa}"><b>Cidade:</b></td>
+													        <td th:text="${empresa.endBairroEmpresa}"><b>Bairro:</b></td>
 													      </tr>
 													      <tr>
 													      	<td><b>Horario de funcionamento:</b></td>
-													      	<td colspan="3"><b>Segunda à Sexta:</b> 08:00 às 17:30 hrs</td>
+													      	<td colspan="3" th:text="${empresa.funciomanentoSegSexta}"><b>Segunda à Sexta:</b></td>
 													      </tr>
 													      <tr>
 													        <td><b>Telefones:</b></td>
-													        <td colspan="2"><b>Sábado:</b> 08:00 às 12:00 hrs</td> 
+													        <td colspan="2" th:text="${empresa.funciomanentoSabado}"><b>Sábado:</b></td> 
 													      </tr>
 													      <tr>
-													        <td colspan="4">(34) 3218-5500</td>
+													        <td colspan="4" th:text="${empresa.telefone}"></td>
 													      </tr>
 													      <tr>
-													        <td><b>E-mail: </b>peixoto@peixoto.com.br</td>
-													        <td><b>Site: </b>www.peixoto.com.br</td> 
+													        <td th:text="${empresa.emailEmpresa}"><b>E-mail: </b></td>
+													        <td th:text="${empresa.siteEmpresa}"><b>Site: </b></td> 
 													      </tr>
 													      
 													    </tbody>
@@ -84,8 +80,8 @@
 							                    </div>
 							                    
 							                    <div class="maps">
-							                    	<div class="h_iframe" >
-							                    		<iframe th:src="@{/maps}" class="embed-responsive-item" height="327px" width="100%" MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 SPACE=0 FRAMEBORDER=0 SCROLLING=NO></iframe>
+							                    	<div class="h_iframe">
+							                    		<iframe th:src="@{/maps/{empresa.idEmpresa}}" class="embed-responsive-item" height="327px" width="100%" MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 SPACE=0 FRAMEBORDER=0 SCROLLING=NO></iframe>
 							                    		<!-- <div th:replace="fragments/mapa/maps :: maps"></div> -->
 							                    	</div>
 							                    </div>
@@ -106,7 +102,7 @@
 							</div>
 						</div>
 						<!-- Fecha container do primeiro modal -->
-
+					</form>
 
 
 </html>

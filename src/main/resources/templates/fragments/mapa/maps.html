@@ -33,11 +33,11 @@
       }
     </style>
   </head>
-  <!-- th:id="'maps'+${empresa.idEmpresa}" -->
+  <!-- th:id="'item_view'+${empresa.idEmpresa}" -->
   <body onload="geocodeAddress();">
-  <div th:fragment="maps">
+  <div th:fragment="maps" id="'item_view'+${empresa.idEmpresa}">
     <form th:object="${empresa}">
-      	<input id="address" type="hidden" value="Uberlandia, MG">
+      	<input id="address" type="hidden" value="R. do Cabelereiro, nº 819">
    <!-- <input id="submit" type="button" value="Geocode"> -->
     	<div id="map"></div>
     </form>

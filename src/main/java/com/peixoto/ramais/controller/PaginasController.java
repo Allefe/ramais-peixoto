@@ -76,7 +76,7 @@ public class PaginasController {
 		return mv;
 	}
 	
-	@GetMapping (value = "/maps")
+	@GetMapping (value = "/maps/{id}")
 	public ModelAndView Maps(){
 		ModelAndView mv = new ModelAndView("fragments/mapa/maps");
 		return mv;
