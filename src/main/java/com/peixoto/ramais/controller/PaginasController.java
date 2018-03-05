@@ -1,12 +1,17 @@
 package com.peixoto.ramais.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.peixoto.ramais.repository.EmpresaRepository;
 
 @Controller
 public class PaginasController {
 	
+	@Autowired EmpresaRepository empresaRepo;
 	
 	@GetMapping (value = "/admintools")
 	public ModelAndView index(){
@@ -77,8 +82,9 @@ public class PaginasController {
 	}
 	
 	@GetMapping (value = "/maps/{id}")
-	public ModelAndView Maps(){
+	public ModelAndView Maps(@PathVariable("id") Integer id){
 		ModelAndView mv = new ModelAndView("fragments/mapa/maps");
+		mv.addObject("empresaSelecionada", empresaRepo.findOne(id));
 		return mv;
 	}
 }

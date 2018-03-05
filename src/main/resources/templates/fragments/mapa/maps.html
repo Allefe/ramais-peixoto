@@ -35,9 +35,10 @@
   </head>
   <!-- th:id="'item_view'+${empresa.idEmpresa}" -->
   <body onload="geocodeAddress();">
-  <div th:fragment="maps" id="'item_view'+${empresa.idEmpresa}">
-    <form th:object="${empresa}">
-      	<input id="address" type="hidden" value="R. do Cabelereiro, nº 819">
+  <div id="${empresa.idEmpresa}">
+    <form>
+      	<!-- <input id="address" type="hidden" value="R. do Cabelereiro, nº 819, Uberlandia - MG"> -->
+      	<input id="address" type="hidden" th:value="${empresaSelecionada.endRuaAveNumEmpresa} +','+ ${empresaSelecionada.endCidadeEmpresa} +','+ ${empresaSelecionada.endCidadeEmpresa}">
    <!-- <input id="submit" type="button" value="Geocode"> -->
     	<div id="map"></div>
     </form>
@@ -45,7 +46,7 @@
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
+          zoom: 19,
           center: {lat: -34.397, lng: 150.644}
         });
         var geocoder = new google.maps.Geocoder();
